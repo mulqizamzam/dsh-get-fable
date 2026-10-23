@@ -36,7 +36,7 @@ Skills are advertised to the model and users. Host-native workspace, shell, brow
 
 ## Validation status
 
-The GitHub connector can write repository files, but this session does not provide a local shell checkout of either repository. As a result, this record must not be read as claiming that the DSH runtime was booted or that integration tests were executed. Run the repository validator and a live install/smoke test against DSH 0.2.1-rc.2 before relying on this plugin in production.
+Executed local checks on a temporary harness fixture tree: node --check index.js, node --check scripts/validate-bundle.mjs, scripts/validate-bundle.mjs (46 generated fixture skills), and a mocked provider smoke test covering list(), on-demand get(), and rejection of a traversal locator. The core entry point and validator used in that test were copied from the repository. Separately, every one of the 46 committed GitHub skill files was fetched and checked for its frontmatter block, matching name, non-empty description, and substantial body. The fixture smoke test did not execute the canonical skill bodies. A local checkout of the exact remote tree and a live DSH 0.2.1-rc.2 boot were unavailable, so actual host installation and integration behavior remain unverified. Run the repository validator and a live install/smoke test before relying on this plugin in production.
 
 Expected local checks:
 
