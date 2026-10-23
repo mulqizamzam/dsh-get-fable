@@ -8,7 +8,7 @@ export const inject = ['skills']
 const pluginRoot = dirname(fileURLToPath(import.meta.url))
 const skillsRoot = join(pluginRoot, 'skills')
 const providerName = 'dsh-get-fable'
-const resourceBase = { kind: 'opaque', description: 'Upstream companion reference files are not bundled locally; follow the pinned GitHub links included in each skill body when source detail is needed.' }
+const resourceBase = { kind: 'opaque', description: 'The lifecycle routing registry is bundled under skills/get-fable/registry.json. Other upstream companion reference files are not bundled locally; follow the pinned GitHub links included in each skill body when source detail is needed.' }
 const skillNamePattern = /^[a-z0-9]+(?:-[a-z0-9]+)*$/
 const frontmatterPattern = /^---\s*\r?\n([\s\S]*?)\r?\n---\s*(?:\r?\n|$)/
 
