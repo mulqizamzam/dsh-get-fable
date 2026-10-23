@@ -2,7 +2,7 @@ import { readdir, readFile } from 'node:fs/promises'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
-export const name = '@mulqizamzam/dsh-get-fable'
+export const name = 'dsh-get-fable'
 export const inject = ['skills']
 
 const pluginRoot = dirname(fileURLToPath(import.meta.url))
