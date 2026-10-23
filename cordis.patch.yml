@@ -1,0 +1,5 @@
+# DSH bundle patch for dsh-get-fable.
+# The base profile already provides the shared skill registry and skill tool.
+- insert:
+    - id: dsh-get-fable-skills
+      name: '@mulqizamzam/dsh-get-fable'
