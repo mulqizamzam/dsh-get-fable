@@ -12,7 +12,8 @@
     "LICENSE",
     "NOTICE",
     "docs/PORTING.md",
-    "scripts/validate-bundle.mjs"
+    "scripts/validate-bundle.mjs",
+    "scripts/smoke-provider.mjs"
   ],
   "engines": {
     "node": ">=22",
