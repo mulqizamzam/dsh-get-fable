@@ -36,10 +36,24 @@ for (const dir of dirs) {
     if (names.has(name)) fail('duplicate skill name ' + name)
     names.add(name)
     if (file.slice(fm[0].length).trim().length < 100) fail(dir + ': suspiciously short skill body')
+    if (!file.includes('## DSH host and authorization boundary')) fail(dir + ': missing DSH host/authorization boundary')
     await stat(path)
   } catch (error) {
     fail(dir + ': ' + (error instanceof Error ? error.message : String(error)))
   }
 }
+const registry = await readJson('skills/get-fable/registry.json')
+if (registry.schemaVersion !== 2 || registry.entry !== 'get-fable' || !Array.isArray(registry.skills)) {
+  fail('invalid canonical routing registry')
+} else {
+  const ids = new Set(registry.skills.map(skill => skill.id))
+  if (ids.size !== 46 || ids.size !== registry.skills.length) fail('routing registry must contain 46 unique skills')
+  if (dirs.some(dir => !ids.has(dir)) || [...ids].some(id => !dirs.includes(id))) fail('routing registry and skill directories differ')
+  for (const skill of registry.skills) {
+    const targets = [...(skill.next || []), ...(skill.fallback ? [skill.fallback] : [])]
+    for (const target of targets) if (!ids.has(target)) fail(skill.id + ': dangling routing target ' + target)
+  }
+  if (!process.exitCode) pass('canonical routing registry and graph references')
+}
 if (process.exitCode) process.exit(process.exitCode)
-pass('frontmatter and body checks completed')
+pass('frontmatter, authorization boundary, and body checks completed')
