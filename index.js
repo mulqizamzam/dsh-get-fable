@@ -8,6 +8,7 @@ export const inject = ['skills']
 const pluginRoot = dirname(fileURLToPath(import.meta.url))
 const skillsRoot = join(pluginRoot, 'skills')
 const providerName = 'dsh-get-fable'
+const resourceBase = { kind: 'opaque', description: 'Upstream companion reference files are not bundled locally; follow the pinned GitHub links included in each skill body when source detail is needed.' }
 const skillNamePattern = /^[a-z0-9]+(?:-[a-z0-9]+)*$/
 const frontmatterPattern = /^---\s*\r?\n([\s\S]*?)\r?\n---\s*(?:\r?\n|$)/
 
@@ -101,7 +102,7 @@ export function apply(ctx) {
           source: 'bundled',
           provider: providerName,
           invocation: { modelInvocable: true, userInvocable: true },
-          resourceBase: { kind: 'directory', path: skill.resourceBase },
+          resourceBase,
         }))
       },
       async get(candidate, options = {}) {
@@ -120,7 +121,7 @@ export function apply(ctx) {
           source: 'bundled',
           provider: providerName,
           invocation: { modelInvocable: true, userInvocable: true },
-          resourceBase: { kind: 'directory', path: dirname(filePath) },
+          resourceBase,
         }
       },
     }
