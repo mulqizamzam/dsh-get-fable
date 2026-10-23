@@ -29,7 +29,7 @@ for (const dir of dirs) {
     const file = await readFile(path, 'utf8')
     const fm = file.match(/^---\s*\n([\s\S]*?)\n---\s*(?:\n|$)/)
     if (!fm) { fail(dir + '/SKILL.md has no valid frontmatter block'); continue }
-    const name = fm[1].match(/^name:\s*['"]?([^'"]+)['"]?\s*$/m)?.[1]?.trim()
+    const name = fm[1].match(/^name:\s*['"]?([^'\"\r\n]+)['"]?\s*$/m)?.[1]?.trim()
     const description = fm[1].match(/^description:\s*(.+)$/m)?.[1]?.trim()
     if (name !== dir) fail(dir + ': frontmatter name mismatch (' + (name || 'missing') + ')')
     if (!description) fail(dir + ': missing description')
