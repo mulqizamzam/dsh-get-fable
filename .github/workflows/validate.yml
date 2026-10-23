@@ -21,5 +21,7 @@ jobs:
           node-version: "22"
       - name: Check module syntax
         run: node --check index.js
+      - name: Check validator and smoke-test syntax
+        run: node --check scripts/validate-bundle.mjs && node --check scripts/smoke-provider.mjs
       - name: Validate package manifest and all bundled skills
-        run: node scripts/validate-bundle.mjs
+        run: node scripts/validate-bundle.mjs && node scripts/smoke-provider.mjs
