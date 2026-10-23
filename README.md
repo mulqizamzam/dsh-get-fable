@@ -27,16 +27,16 @@ Plugin ini membantu coding agent bekerja lebih disiplin: menemukan jalur eksekus
 Jalankan di terminal:
 
 ```bash
-dsh plugin add mulqizamzam/dsh-get-fable
+dsh plugin add "github:mulqizamzam/dsh-get-fable#main"
 ```
 
 Untuk menambahkan plugin ke profil tertentu (contoh profil `web`):
 
 ```bash
-dsh plugin --profile web add mulqizamzam/dsh-get-fable
+dsh plugin --profile web add "github:mulqizamzam/dsh-get-fable#main"
 ```
 
-Jika pemasangan berhasil, mulai ulang/reload profil DSH bila diminta oleh CLI. Perintah di atas memasang paket plugin dari repositori GitHub ini. Bundle menggunakan manifest `package.json` native DSH dan menargetkan DSH `0.2.1-rc.2`; dashboard upstream dan layanan REST tidak termasuk dalam port ini.
+Jika pemasangan berhasil, mulai ulang/reload profil DSH bila diminta oleh CLI. Perintah ini memasang paket GitHub pada branch `main`. Paket memakai manifest `package.json` native DSH dan menargetkan DSH `0.2.1-rc.2`; dashboard upstream dan layanan REST tidak termasuk dalam port ini. Untuk deployment yang membutuhkan commit yang tetap, ganti `#main` dengan hash commit yang sudah Anda tinjau.
 
 ### Memasang dari salinan lokal (pengembangan)
 
@@ -46,7 +46,7 @@ cd dsh-get-fable
 dsh plugin add .
 ```
 
-Apabila CLI DSH pada versi Anda tidak menerima path lokal dalam bentuk tersebut, lihat `dsh plugin --help`. Proses build lokal dapat memerlukan Bun dan dependensi pengembangan; pengguna biasa sebaiknya memakai bundle rilis yang telah dibangun.
+Apabila CLI DSH pada versi Anda tidak menerima path lokal dalam bentuk tersebut, lihat `dsh plugin --help`. Port skill-only ini tidak memerlukan proses kompilasi UI; Node.js digunakan untuk menjalankan entry point plugin.
 
 ## Cara menggunakan
 
