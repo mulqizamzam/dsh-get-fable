@@ -36,7 +36,7 @@ Untuk menambahkan plugin ke profil tertentu (contoh profil `web`):
 dsh plugin --profile web add mulqizamzam/dsh-get-fable
 ```
 
-Jika pemasangan berhasil, mulai ulang/reload profil DSH bila diminta oleh CLI. Perintah di atas memasang plugin dari repositori GitHub ini; tidak perlu memasang paket npm terpisah untuk menggunakan bundle DSH.
+Jika pemasangan berhasil, mulai ulang/reload profil DSH bila diminta oleh CLI. Perintah di atas memasang paket plugin dari repositori GitHub ini. Bundle menggunakan manifest `package.json` native DSH dan menargetkan DSH `0.2.1-rc.2`; dashboard upstream dan layanan REST tidak termasuk dalam port ini.
 
 ### Memasang dari salinan lokal (pengembangan)
 
@@ -90,7 +90,7 @@ dari sudah dipublikasikan.
 
 ### Alur kerja yang disediakan
 
-Port mempertahankan kategori workflow sumber: routing/lifecycle, discovery, riset berbasis sumber primer, perencanaan, TDD, eksekusi bertahap, verifikasi, review adversarial, keamanan, pemulihan dari kegagalan, arsitektur, delegasi, evaluasi, memori/konteks, artefak/dokumentasi, operasi proyek jangka panjang, dan release readiness. Lihat direktori `skills/` untuk katalog dan batas pemakaian tiap skill.
+Port ini membawa **46 skill canonical** dari katalog sumber ke direktori `skills/`, termasuk lifecycle routing, discovery, riset, planning, TDD, bounded execution, verification, recovery, review/security, test engineering, release readiness, handoff, evaluasi, learning, arsitektur, delegasi, pengelolaan konteks, artefak, dan workflow produktivitas. Skill diiklankan melalui registry skill native DSH dan dimuat on-demand. Catatan port di `docs/PORTING.md` memisahkan workflow yang dipertahankan dari layanan upstream yang belum direplikasi.
 
 ## Konfigurasi dan data
 
@@ -104,7 +104,7 @@ Port mempertahankan kategori workflow sumber: routing/lifecycle, discovery, rise
 
 1. **Perintah `dsh` tidak ditemukan** — pasang atau perbaiki instalasi DSH; plugin tidak memasang host DSH itu sendiri.
 2. **Plugin tidak muncul** — jalankan `dsh plugin --help`, pastikan repositori ditambahkan ke profil yang benar, lalu reload DSH.
-3. **UI atau endpoint plugin gagal** — periksa log DSH, versi harness, dan kelengkapan bundle; jangan menganggap plugin aktif hanya karena instalasi selesai.
+3. **Mencari dashboard atau endpoint REST** — UI dashboard dan endpoint `/api/fable/*` upstream belum termasuk port ini. Port saat ini menyediakan katalog dan instruksi skill melalui mekanisme skill native DSH.
 4. **Skill tidak dijalankan otomatis** — sebutkan tugas/workflow secara eksplisit; perilaku pemilihan skill bergantung pada host dan konteks prompt.
 5. **Versi lain dari DSH** — jangan menganggap kompatibilitas otomatis; verifikasi pada versi yang dipakai.
 
