@@ -1,0 +1,7 @@
+dsh-get-fable is a community port derived from get-fable.
+
+Upstream project: https://github.com/imMamdouhaboammar/get-fable
+Upstream author credited in package metadata: Mamdouh Abo Ammar
+License: GNU Affero General Public License v3.0 or later (AGPL-3.0-or-later)
+
+This repository is not an official DeepSeek product and does not imply endorsement by DeepSeek. The port does not claim to reproduce upstream runtime services that are not included in this repository.
