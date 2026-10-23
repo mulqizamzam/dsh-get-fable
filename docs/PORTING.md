@@ -23,7 +23,7 @@
 
 ## DSH-native design
 
-The package root has a package.json with dsh.manifestVersion: 1, an explicit Cordis bundle patch, a module entry point, and the exact engines.dsh compatibility target. The patch registers the entry module. The module then registers one provider named dsh-get-fable with the existing DSH skill registry and loads each skills/<slug>/SKILL.md instruction body on demand.
+The package root has a package.json with dsh.manifestVersion: 1, an explicit Cordis bundle patch, a module entry point, and the exact engines.dsh compatibility target. The patch registers the entry module. The module then registers one provider named dsh-get-fable with the existing DSH skill registry and loads each skills/<slug>/SKILL.md instruction body on demand. The canonical schema-v2 routing registry is bundled at skills/get-fable/registry.json; a static structural check found 46 unique IDs and no dangling next/fallback targets.
 
 Skills are advertised to the model and users. Host-native workspace, shell, browser, network, or Python operations remain dependent on what the DSH profile actually exposes. The plugin grants no permissions of its own. Mutation, release, and security actions must observe repository instructions, available approvals, and authorization boundaries.
 
@@ -36,12 +36,15 @@ Skills are advertised to the model and users. Host-native workspace, shell, brow
 
 ## Validation status
 
-Executed local checks on a temporary harness fixture tree: node --check index.js, node --check scripts/validate-bundle.mjs, scripts/validate-bundle.mjs (46 generated fixture skills), and a mocked provider smoke test covering list(), on-demand get(), and rejection of a traversal locator. The core entry point and validator used in that test were copied from the repository. Separately, every one of the 46 committed GitHub skill files was fetched and checked for its frontmatter block, matching name, non-empty description, and substantial body. The fixture smoke test did not execute the canonical skill bodies. A local checkout of the exact remote tree and a live DSH 0.2.1-rc.2 boot were unavailable, so actual host installation and integration behavior remain unverified. Run the repository validator and a live install/smoke test before relying on this plugin in production.
+Executed local checks on a temporary harness fixture tree: node --check index.js, node --check scripts/validate-bundle.mjs, node --check scripts/smoke-provider.mjs, scripts/validate-bundle.mjs (46 generated fixture skills plus a fixture routing registry), and the provider smoke test covering list(), on-demand get(), invocation metadata, resource hint, abort behavior, and rejection of a traversal locator. The core entry point, validator, and smoke-test code used in that test were copied from the repository; fixture skill bodies were generated test data, not the canonical body content. Separately, all 46 committed GitHub skill files were fetched and checked for frontmatter, matching name, a parsable non-empty description, substantial body, and the DSH authorization-boundary section. The remote schema-v2 routing registry was also checked for 46 unique IDs and zero dangling next/fallback targets. A GitHub Actions workflow is committed to run the validator and provider smoke test on push and pull request, but its remote run result was not confirmed in this session. A local checkout of the exact remote tree and a live DSH 0.2.1-rc.2 boot were unavailable, so actual host installation and integration behavior remain unverified.
 
 Expected local checks:
 
-    node scripts/validate-bundle.mjs
     node --check index.js
+    node --check scripts/validate-bundle.mjs
+    node --check scripts/smoke-provider.mjs
+    node scripts/validate-bundle.mjs
+    node scripts/smoke-provider.mjs
     dsh --version
     dsh plugin --help
     dsh plugin add .
