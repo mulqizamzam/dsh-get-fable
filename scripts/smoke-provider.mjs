@@ -17,7 +17,7 @@ assert.deepEqual(inject, ['skills'])
 apply(ctx)
 
 const skills = await provider.list({ signal: controller.signal })
-assert.equal(skills.length, 46, 'expected all 46 canonical skills')
+assert.equal(skills.length, 47, 'expected 46 upstream skills plus the DSH fable-bug-hunt specialist')
 const names = new Set(skills.map(skill => skill.name))
 assert.equal(names.size, skills.length, 'skill names must be unique')
 
@@ -34,6 +34,15 @@ for (const skill of skills) {
   assert.equal(definition.description, skill.description)
   assert.ok(definition.content.length > 1000, skill.name + ': body unexpectedly short')
   assert.ok(definition.content.includes('## DSH host and authorization boundary'), skill.name + ': missing safety boundary')
+  if (skill.name === 'get-fable') {
+    assert.ok(definition.content.includes('fable-bug-hunt'), 'router must dispatch unknown-root-cause bugs to the specialist')
+    assert.ok(definition.content.includes('skill being found, named, or loaded is not evidence that diagnosis has happened'), 'router must not treat loading as diagnosis completion')
+  }
+  if (skill.name === 'fable-bug-hunt') {
+    assert.ok(definition.content.includes('## Diagnosis Packet'), 'bug-hunt must define a structured diagnosis result')
+    assert.ok(definition.content.includes('## Window and context budget protocol'), 'bug-hunt must guard against context-window exhaustion')
+    assert.ok(definition.content.includes('Skill load is not diagnosis completion.'), 'bug-hunt must reject load-only completion')
+  }
 }
 
 assert.equal(await provider.get({ locator: '../package.json' }), undefined, 'path traversal locator must be rejected')
@@ -41,4 +50,4 @@ assert.equal(await provider.get({ locator: '../package.json' }), undefined, 'pat
 const aborted = new AbortController()
 aborted.abort(new Error('test abort'))
 await assert.rejects(provider.list({ signal: aborted.signal }), /test abort/)
-console.log('PASS: DSH skill provider smoke test (46 skills, list/get, policy, resource hint, abort, path traversal)')
+console.log('PASS: DSH skill provider smoke test (47 skills, list/get, diagnosis closure, policy, resource hint, abort, path traversal)')
