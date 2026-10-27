@@ -58,6 +58,6 @@ if (registry.schemaVersion !== 2 || registry.entry !== 'get-fable' || !Array.isA
 const router = await readFile(join(skillRoot, 'get-fable/SKILL.md'), 'utf8')
 const bugHunt = await readFile(join(skillRoot, 'fable-bug-hunt/SKILL.md'), 'utf8')
 if (!router.includes('fable-bug-hunt') || !router.includes('skill being found, named, or loaded is not evidence that diagnosis has happened')) fail('router is missing the diagnosis dispatch/closure contract')
-if (!bugHunt.includes('## Diagnosis Packet') || !bugHunt.includes('## Window and context budget protocol') || !bugHunt.includes('Skill load is not diagnosis completion.')) fail('fable-bug-hunt is missing its packet or window-closure contract')
+if (!bugHunt.includes('## Diagnosis Packet') || !bugHunt.includes('### 6. Window and context budget protocol') || !bugHunt.includes('Skill load is not diagnosis completion.')) fail('fable-bug-hunt is missing its packet or window-closure contract')
 if (process.exitCode) process.exit(process.exitCode)
 pass('frontmatter, authorization boundary, diagnosis dispatch, packet, and window-closure checks completed')
