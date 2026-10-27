@@ -40,7 +40,7 @@ for (const skill of skills) {
   }
   if (skill.name === 'fable-bug-hunt') {
     assert.ok(definition.content.includes('## Diagnosis Packet'), 'bug-hunt must define a structured diagnosis result')
-    assert.ok(definition.content.includes('## Window and context budget protocol'), 'bug-hunt must guard against context-window exhaustion')
+    assert.ok(definition.content.includes('### 6. Window and context budget protocol'), 'bug-hunt must guard against context-window exhaustion')
     assert.ok(definition.content.includes('Skill load is not diagnosis completion.'), 'bug-hunt must reject load-only completion')
   }
 }
