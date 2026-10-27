@@ -20,8 +20,8 @@ else pass('Cordis patch registration')
 
 const skillRoot = join(rootPath, 'skills')
 const dirs = (await readdir(skillRoot, { withFileTypes: true })).filter(entry => entry.isDirectory()).map(entry => entry.name).sort()
-if (dirs.length !== 46) fail('expected 46 canonical skills, found ' + dirs.length)
-else pass('46 skill directories found')
+if (dirs.length !== 47) fail('expected 47 bundled skills (46 upstream workflows plus fable-bug-hunt), found ' + dirs.length)
+else pass('47 bundled skill directories found')
 const names = new Set()
 for (const dir of dirs) {
   const path = join(skillRoot, dir, 'SKILL.md')
@@ -47,7 +47,7 @@ if (registry.schemaVersion !== 2 || registry.entry !== 'get-fable' || !Array.isA
   fail('invalid canonical routing registry')
 } else {
   const ids = new Set(registry.skills.map(skill => skill.id))
-  if (ids.size !== 46 || ids.size !== registry.skills.length) fail('routing registry must contain 46 unique skills')
+  if (ids.size !== 47 || ids.size !== registry.skills.length) fail('routing registry must contain 47 unique skills')
   if (dirs.some(dir => !ids.has(dir)) || [...ids].some(id => !dirs.includes(id))) fail('routing registry and skill directories differ')
   for (const skill of registry.skills) {
     const targets = [...(skill.next || []), ...(skill.fallback ? [skill.fallback] : [])]
@@ -55,5 +55,9 @@ if (registry.schemaVersion !== 2 || registry.entry !== 'get-fable' || !Array.isA
   }
   if (!process.exitCode) pass('canonical routing registry and graph references')
 }
+const router = await readFile(join(skillRoot, 'get-fable/SKILL.md'), 'utf8')
+const bugHunt = await readFile(join(skillRoot, 'fable-bug-hunt/SKILL.md'), 'utf8')
+if (!router.includes('fable-bug-hunt') || !router.includes('skill being found, named, or loaded is not evidence that diagnosis has happened')) fail('router is missing the diagnosis dispatch/closure contract')
+if (!bugHunt.includes('## Diagnosis Packet') || !bugHunt.includes('## Window and context budget protocol') || !bugHunt.includes('Skill load is not diagnosis completion.')) fail('fable-bug-hunt is missing its packet or window-closure contract')
 if (process.exitCode) process.exit(process.exitCode)
-pass('frontmatter, authorization boundary, and body checks completed')
+pass('frontmatter, authorization boundary, diagnosis dispatch, packet, and window-closure checks completed')
