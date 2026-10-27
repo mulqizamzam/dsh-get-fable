@@ -50,6 +50,15 @@ Setelah plugin aktif, beri agent tugas seperti biasa. Minta workflow tertentu se
 
 ### Contoh permintaan
 
+**Diagnosis bug sampai akar penyebab (tanpa berhenti di load skill)**
+```text
+Diagnosa bug ini sampai ada Diagnosis Packet yang berbasis bukti. Telusuri jalur eksekusi,
+reproduksi atau karakterisasi gejalanya, uji hipotesis penyebab dengan probe yang membedakan,
+dan jangan menganggap skill yang sudah dimuat sebagai diagnosis selesai. Jika window tidak cukup,
+berikan status belum selesai dan satu langkah probe berikutnya yang spesifik serta bisa dilanjutkan.
+Jangan ubah kode produksi sebelum saya meminta perbaikan.
+```
+
 **Memperbaiki bug dengan TDD**
 ```text
 Perbaiki race condition pada refresh token. Temukan jalur eksekusi yang sebenarnya,
@@ -86,7 +95,7 @@ dari sudah dipublikasikan.
 
 ### Alur kerja yang disediakan
 
-Port ini membawa **46 skill canonical** dari katalog sumber ke direktori `skills/`, termasuk lifecycle routing, discovery, riset, planning, TDD, bounded execution, verification, recovery, review/security, test engineering, release readiness, handoff, evaluasi, learning, arsitektur, delegasi, pengelolaan konteks, artefak, dan workflow produktivitas. Skill diiklankan melalui registry skill native DSH dan dimuat on-demand. Catatan port di `docs/PORTING.md` memisahkan workflow yang dipertahankan dari layanan upstream yang belum direplikasi.
+Port ini membawa **47 skill** ke direktori `skills/`: 46 workflow dari katalog sumber ditambah satu spesialis khusus DSH, `fable-bug-hunt`. Spesialis ini menutup alur diagnosis dari gejala, reproduksi dan hipotesis sampai Diagnosis Packet atau handoff yang jelas saat window tidak cukup. Katalog juga mencakup lifecycle routing, discovery, riset, planning, TDD, bounded execution, verification, recovery, review/security, test engineering, release readiness, handoff, evaluasi, learning, arsitektur, delegasi, pengelolaan konteks, artefak, dan workflow produktivitas. Skill diiklankan melalui registry skill native DSH dan dimuat on-demand. Catatan port di `docs/PORTING.md` memisahkan workflow yang dipertahankan dari layanan upstream yang belum direplikasi.
 
 ## Konfigurasi dan data
 
@@ -101,8 +110,9 @@ Port ini membawa **46 skill canonical** dari katalog sumber ke direktori `skills
 1. **Perintah `dsh` tidak ditemukan** — pasang atau perbaiki instalasi DSH; plugin tidak memasang host DSH itu sendiri.
 2. **Plugin tidak muncul** — jalankan `dsh plugin --help`, pastikan repositori ditambahkan ke profil yang benar, lalu reload DSH.
 3. **Mencari dashboard atau endpoint REST** — UI dashboard dan endpoint `/api/fable/*` upstream belum termasuk port ini. Port saat ini menyediakan katalog dan instruksi skill melalui mekanisme skill native DSH.
-4. **Skill tidak dijalankan otomatis** — sebutkan tugas/workflow secara eksplisit; perilaku pemilihan skill bergantung pada host dan konteks prompt.
-5. **Versi lain dari DSH** — jangan menganggap kompatibilitas otomatis; verifikasi pada versi yang dipakai.
+4. **Diagnosis berhenti setelah skill dimuat** — perbarui plugin dan minta hasil berupa Diagnosis Packet; router mensyaratkan paket diagnosis atau continuation packet yang eksplisit, bukan sekadar nama skill.
+5. **Skill tidak dijalankan otomatis** — sebutkan tugas/workflow secara eksplisit; perilaku pemilihan skill bergantung pada host dan konteks prompt.
+6. **Versi lain dari DSH** — jangan menganggap kompatibilitas otomatis; verifikasi pada versi yang dipakai.
 
 ## Lisensi dan asal
 
