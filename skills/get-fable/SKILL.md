@@ -79,8 +79,8 @@ Before intent scoring, check hard overrides:
 2. repeated failure or contradictory evidence → recover;
 3. explicit security-sensitive request → security specialist;
 4. stale verification when completion/release is requested → verify;
-5. blocking unknown that changes design → discover/research;
-6. bug report with unknown causal mechanism → `fable-bug-hunt` (not get-fable itself, and not `fable-tdd` before diagnosis);
+5. bug report with unknown causal mechanism → `fable-bug-hunt`; it owns the bounded diagnosis and performs only the supporting discovery/research needed to close it;
+6. blocking unknown that changes design on a non-bug task → discover/research/plan;
 7. otherwise route by task ownership.
 
 Precedence exists to stop a plausible but unsafe lower-level action.
@@ -119,7 +119,7 @@ A route is not permanent. Recompute when:
 ## Decision Rules
 - `failureStreak >= 2` with materially similar attempts outranks execution and routes to recovery.
 - Explicit vulnerability/threat/authz/secret/trust-boundary work routes to security even if the diff also needs general review later.
-- Current external API/version uncertainty routes to research; repository-local uncertainty routes to discovery.
+- For non-bug tasks, current external API/version uncertainty routes to research and repository-local uncertainty routes to discovery. During an unknown-root-cause bug diagnosis, `fable-bug-hunt` retains primary ownership and performs only the supporting research/discovery needed to close the diagnosis.
 - If implementation cannot proceed without choosing a new contract/architecture, plan before execute.
 - Once the causal mechanism/behavior contract is grounded, a requested bug fix should route through TDD; if the root cause is unknown, route through `fable-bug-hunt` first.
 - `fable-bug-hunt` must return a Diagnosis Packet or an explicit unresolved continuation packet before the diagnostic phase can be considered closed.
