@@ -37,6 +37,7 @@ for (const skill of skills) {
   if (skill.name === 'get-fable') {
     assert.ok(definition.content.includes('fable-bug-hunt'), 'router must dispatch unknown-root-cause bugs to the specialist')
     assert.ok(definition.content.includes('skill being found, named, or loaded is not evidence that diagnosis has happened'), 'router must not treat loading as diagnosis completion')
+    assert.ok(definition.content.indexOf('bug report with unknown causal mechanism → `fable-bug-hunt`') < definition.content.indexOf('blocking unknown that changes design on a non-bug task → discover/research/plan'), 'bug diagnosis must precede generic discovery routing')
   }
   if (skill.name === 'fable-bug-hunt') {
     assert.ok(definition.content.includes('## Diagnosis Packet'), 'bug-hunt must define a structured diagnosis result')
