@@ -7,8 +7,10 @@ description: 'Orchestrate software engineering workflows across the canonical ge
 
 Choose the next engineering mode from the actual state of the work, not from the loudest keyword in the user's last message.
 
+**Role boundary:** get-fable is the router/orchestrator, not the domain bug-diagnosis worker. For an unknown-root-cause bug report, dispatch to `fable-bug-hunt`. A skill being found, named, or loaded is not evidence that diagnosis has happened.
+
 ## Mission
-`get-fable` is the **Master Orchestration Agent (Boss Agent)** and lifecycle control plane governing the Get-Fable ecosystem. It exercises central authority over task intake, decomposition, specialist ownership assignment, execution tracking, verification, recovery, and completion decisions across all 42 canonical skills.
+`get-fable` is the **Master Orchestration Agent (Boss Agent)** and lifecycle control plane governing the Get-Fable ecosystem. It exercises central authority over task intake, decomposition, specialist ownership assignment, execution tracking, verification, recovery, and completion decisions across the bundled specialist catalog, including source workflows and DSH-specific adapters.
 
 Good routing is stateful. "Ship it" does not mean release if verification is stale. "Fix it" does not mean execute if the same hypothesis already failed twice. "Use this API" does not mean code from memory if the contract is current and unknown.
 
@@ -41,10 +43,11 @@ Classify the dominant reason the next action exists.
 
 | Situation | Preferred owner |
 | --- | --- |
-| repository/runtime facts unknown | `fable-discover` |
+| unexpected behavior, regression, or bug with unknown root cause | `fable-bug-hunt` |
+| repository/runtime facts unknown outside a bug-diagnosis request | `fable-discover` |
 | current external fact/API uncertain | `fable-research` |
 | architecture/decomposition/contract choice | `fable-plan` |
-| testable behavior change | `fable-tdd` |
+| known/testable behavior contract ready for a regression test | `fable-tdd` |
 | genuinely independent bounded cards | `fable-delegate` |
 | bounded accepted implementation | `fable-execute` |
 | fresh falsification required | `fable-verify` |
@@ -77,25 +80,28 @@ Before intent scoring, check hard overrides:
 3. explicit security-sensitive request → security specialist;
 4. stale verification when completion/release is requested → verify;
 5. blocking unknown that changes design → discover/research;
-6. otherwise route by task ownership.
+6. bug report with unknown causal mechanism → `fable-bug-hunt` (not get-fable itself, and not `fable-tdd` before diagnosis);
+7. otherwise route by task ownership.
 
 Precedence exists to stop a plausible but unsafe lower-level action.
 
 ### Stage 3 — Distinguish task type from requested outcome
 Examples:
 - "Publish this" is an outcome; current state may still require verify/review first.
-- "Fix this" is an outcome; unknown root location may require discovery.
+- "Fix this" is an outcome; when the root cause is unknown, `fable-bug-hunt` performs the bounded discovery needed to reach a diagnosis before any fix. Do not stop after merely recommending `fable-discover`.
 - "Make it faster" may be research/measurement/planning before execution.
 - "Review and fix" is two stages; review should identify grounded findings before mutation unless user explicitly asks for direct repair and evidence is already clear.
 
 ### Stage 4 — Route to one primary owner
 Choose the Skill that owns the **next load-bearing decision**, not every Skill that might eventually participate.
 
-Return:
-- selected Skill;
-- reason/precedence;
-- evidence/state used;
-- gate that will permit the next transition.
+Return a routing packet containing:
+- selected Skill and why its ownership fits;
+- symptom, expected versus actual behavior, reproduction/context, and constraints already known;
+- recent attempts, current hypotheses, evidence and unresolved questions;
+- the gate that permits the next transition and the expected output contract.
+
+For bug diagnosis, keep `fable-bug-hunt` as primary owner through its probes. Do not send the task back to get-fable after each probe; re-route only when a precedence gate changes or the diagnosis packet is ready.
 
 ### Stage 5 — Persist only meaningful transitions
 Update lifecycle state when the route changes actual work phase or evidence freshness. Do not churn state for read-only explanatory turns.
@@ -115,7 +121,8 @@ A route is not permanent. Recompute when:
 - Explicit vulnerability/threat/authz/secret/trust-boundary work routes to security even if the diff also needs general review later.
 - Current external API/version uncertainty routes to research; repository-local uncertainty routes to discovery.
 - If implementation cannot proceed without choosing a new contract/architecture, plan before execute.
-- A testable bug/behavior change should route through TDD unless a valid regression harness is impossible or already established.
+- Once the causal mechanism/behavior contract is grounded, a requested bug fix should route through TDD; if the root cause is unknown, route through `fable-bug-hunt` first.
+- `fable-bug-hunt` must return a Diagnosis Packet or an explicit unresolved continuation packet before the diagnostic phase can be considered closed.
 - "Done", "merge", "ship", or "release" cannot bypass stale/missing verification.
 - A passing receipt/research note is not completion-capable evidence.
 - Delegation is selected for real independence, not simply because there are multiple subtasks.
@@ -129,6 +136,8 @@ A route is not permanent. Recompute when:
 - Repeated failed hypotheses do not route back into blind execution.
 - Research and discovery are distinct: external current fact vs repository/runtime fact.
 - Routing explanations remain traceable to intent/state, not hidden scoring alone.
+- Skill discovery/loading is a dispatch event, never a diagnosis-completion signal.
+- For bug reports, orchestration remains open until the specialist returns a Diagnosis Packet or an explicit unresolved packet with one precise next probe.
 
 ## Failure Taxonomy
 ### Keyword capture
@@ -173,12 +182,14 @@ Likely continuation(s):
 ```
 
 ## Completion Criteria
-Orchestration for a turn is complete when:
+Orchestration for a non-diagnostic turn is complete when:
 - the next load-bearing decision has one clear owner;
 - precedence gates were checked;
 - route is consistent with current evidence/state;
 - specialist receives enough context to begin without reinterpreting the whole conversation;
 - no later lifecycle claim is implied before its evidence exists.
+
+For an unknown-root-cause bug report, orchestration is not complete just because `fable-bug-hunt` was selected or loaded. The diagnostic phase closes only when a Diagnosis Packet is returned, or when an explicitly unresolved continuation packet names the next discriminating probe and why it could not be run now.
 
 ## Progressive Resources
 - Deep guide: `references/stateful-routing-and-precedence.md`
