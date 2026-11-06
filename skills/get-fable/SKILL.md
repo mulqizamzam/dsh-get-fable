@@ -192,9 +192,9 @@ Orchestration for a non-diagnostic turn is complete when:
 For an unknown-root-cause bug report, orchestration is not complete just because `fable-bug-hunt` was selected or loaded. The diagnostic phase closes only when a Diagnosis Packet is returned, or when an explicitly unresolved continuation packet names the next discriminating probe and why it could not be run now.
 
 ## Progressive Resources
-- Deep guide: `references/stateful-routing-and-precedence.md`
-- Existing matrix: `references/lifecycle-routing-matrix.md`
-- Example: `examples/lifecycle-walkthrough.md`
+- Deep guide: [references/stateful-routing-and-precedence.md](https://github.com/imMamdouhaboammar/get-fable/blob/36920932251ffc619da6073eb02cb35a9a2f2dbf/skills/get-fable/references/stateful-routing-and-precedence.md)
+- Existing matrix: [references/lifecycle-routing-matrix.md](https://github.com/imMamdouhaboammar/get-fable/blob/36920932251ffc619da6073eb02cb35a9a2f2dbf/skills/get-fable/references/lifecycle-routing-matrix.md)
+- Example: [examples/lifecycle-walkthrough.md](https://github.com/imMamdouhaboammar/get-fable/blob/36920932251ffc619da6073eb02cb35a9a2f2dbf/skills/get-fable/examples/lifecycle-walkthrough.md)
 
 
 ## DSH host and authorization boundary

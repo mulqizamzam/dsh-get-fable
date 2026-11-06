@@ -119,15 +119,15 @@ bun ./bin/get-fable.js anti-churn status
 
 ## Progressive Resources
 
-- [Decisions & Receipts Architecture](https://github.com/imMamdouhaboammar/get-fable/blob/fb0b98143b1cb0c34df6b77d3b948204488fc87d/skills/fable-anti-churn/references/DECISIONS-AND-RECEIPTS.md) — Comprehensive receipt schema and 35 canonical fields specification.
-- [Threat Model](https://github.com/imMamdouhaboammar/get-fable/blob/fb0b98143b1cb0c34df6b77d3b948204488fc87d/skills/fable-anti-churn/references/THREAT-MODEL.md) — Security boundaries, trust domains, and tampering prevention.
-- [Privacy Policy](https://github.com/imMamdouhaboammar/get-fable/blob/fb0b98143b1cb0c34df6b77d3b948204488fc87d/skills/fable-anti-churn/references/PRIVACY.md) — Prohibited fields and secret redaction enforcement.
-- [Evaluation Protocol](https://github.com/imMamdouhaboammar/get-fable/blob/fb0b98143b1cb0c34df6b77d3b948204488fc87d/skills/fable-anti-churn/references/EVALUATION.md) — 23-scenario verification matrix and baseline assertions.
-- [Doctrine Review](https://github.com/imMamdouhaboammar/get-fable/blob/fb0b98143b1cb0c34df6b77d3b948204488fc87d/skills/fable-anti-churn/references/doctrine_review.md) — Mathematical and architectural foundations of duplicate work prevention.
-- [Claude Integration](https://github.com/imMamdouhaboammar/get-fable/blob/fb0b98143b1cb0c34df6b77d3b948204488fc87d/skills/fable-anti-churn/references/CLAUDE-INSTALL.md) — Host lifecycle hook setup for Claude Code.
-- [Codex Integration](https://github.com/imMamdouhaboammar/get-fable/blob/fb0b98143b1cb0c34df6b77d3b948204488fc87d/skills/fable-anti-churn/references/CODEX-INSTALL.md) — Host lifecycle hook setup for OpenAI Codex.
-- [Event Template](https://github.com/imMamdouhaboammar/get-fable/blob/fb0b98143b1cb0c34df6b77d3b948204488fc87d/skills/fable-anti-churn/templates/EVENT_TEMPLATE.json) — Standard action event JSON template.
-- [Receipt Template](https://github.com/imMamdouhaboammar/get-fable/blob/fb0b98143b1cb0c34df6b77d3b948204488fc87d/skills/fable-anti-churn/templates/RECEIPT_TEMPLATE.json) — Canonical decision receipt JSON template.
+- [Decisions & Receipts Architecture](https://github.com/imMamdouhaboammar/get-fable/blob/36920932251ffc619da6073eb02cb35a9a2f2dbf/skills/fable-anti-churn/references/DECISIONS-AND-RECEIPTS.md) — Comprehensive receipt schema and 35 canonical fields specification.
+- [Threat Model](https://github.com/imMamdouhaboammar/get-fable/blob/36920932251ffc619da6073eb02cb35a9a2f2dbf/skills/fable-anti-churn/references/THREAT-MODEL.md) — Security boundaries, trust domains, and tampering prevention.
+- [Privacy Policy](https://github.com/imMamdouhaboammar/get-fable/blob/36920932251ffc619da6073eb02cb35a9a2f2dbf/skills/fable-anti-churn/references/PRIVACY.md) — Prohibited fields and secret redaction enforcement.
+- [Evaluation Protocol](https://github.com/imMamdouhaboammar/get-fable/blob/36920932251ffc619da6073eb02cb35a9a2f2dbf/skills/fable-anti-churn/references/EVALUATION.md) — 23-scenario verification matrix and baseline assertions.
+- [Doctrine Review](https://github.com/imMamdouhaboammar/get-fable/blob/36920932251ffc619da6073eb02cb35a9a2f2dbf/skills/fable-anti-churn/references/doctrine_review.md) — Mathematical and architectural foundations of duplicate work prevention.
+- [Claude Integration](https://github.com/imMamdouhaboammar/get-fable/blob/36920932251ffc619da6073eb02cb35a9a2f2dbf/skills/fable-anti-churn/references/CLAUDE-INSTALL.md) — Host lifecycle hook setup for Claude Code.
+- [Codex Integration](https://github.com/imMamdouhaboammar/get-fable/blob/36920932251ffc619da6073eb02cb35a9a2f2dbf/skills/fable-anti-churn/references/CODEX-INSTALL.md) — Host lifecycle hook setup for OpenAI Codex.
+- [Event Template](https://github.com/imMamdouhaboammar/get-fable/blob/36920932251ffc619da6073eb02cb35a9a2f2dbf/skills/fable-anti-churn/templates/EVENT_TEMPLATE.json) — Standard action event JSON template.
+- [Receipt Template](https://github.com/imMamdouhaboammar/get-fable/blob/36920932251ffc619da6073eb02cb35a9a2f2dbf/skills/fable-anti-churn/templates/RECEIPT_TEMPLATE.json) — Canonical decision receipt JSON template.
 
 
 ## DSH host and authorization boundary

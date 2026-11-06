@@ -174,10 +174,10 @@ Verification completes when:
 - verdict is no broader than the evidence supports.
 
 ## Progressive Resources
-- Deep matrix guide: `references/verification-matrix-and-evidence-strength.md`
-- Existing falsification heuristics: `references/falsification-heuristics.md`
-- Evidence recording: `references/evidence-recording.md`
-- Example: `examples/falsification-session.md`
+- Deep matrix guide: [references/verification-matrix-and-evidence-strength.md](https://github.com/imMamdouhaboammar/get-fable/blob/36920932251ffc619da6073eb02cb35a9a2f2dbf/skills/fable-verify/references/verification-matrix-and-evidence-strength.md)
+- Existing falsification heuristics: [references/falsification-heuristics.md](https://github.com/imMamdouhaboammar/get-fable/blob/36920932251ffc619da6073eb02cb35a9a2f2dbf/skills/fable-verify/references/falsification-heuristics.md)
+- Evidence recording: [references/evidence-recording.md](https://github.com/imMamdouhaboammar/get-fable/blob/36920932251ffc619da6073eb02cb35a9a2f2dbf/skills/fable-verify/references/evidence-recording.md)
+- Example: [examples/falsification-session.md](https://github.com/imMamdouhaboammar/get-fable/blob/36920932251ffc619da6073eb02cb35a9a2f2dbf/skills/fable-verify/examples/falsification-session.md)
 
 
 ## DSH host and authorization boundary

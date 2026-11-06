@@ -172,9 +172,9 @@ Recovery completes only when:
 - execution can resume without another blind retry.
 
 ## Progressive Resources
-- Deep guide: `references/diagnostic-falsification-playbook.md`
-- Existing ladder: `references/attribution-ladder.md`
-- Example: `examples/recovering-stale-test-cache.md`
+- Deep guide: [references/diagnostic-falsification-playbook.md](https://github.com/imMamdouhaboammar/get-fable/blob/36920932251ffc619da6073eb02cb35a9a2f2dbf/skills/fable-recover/references/diagnostic-falsification-playbook.md)
+- Existing ladder: [references/attribution-ladder.md](https://github.com/imMamdouhaboammar/get-fable/blob/36920932251ffc619da6073eb02cb35a9a2f2dbf/skills/fable-recover/references/attribution-ladder.md)
+- Example: [examples/recovering-stale-test-cache.md](https://github.com/imMamdouhaboammar/get-fable/blob/36920932251ffc619da6073eb02cb35a9a2f2dbf/skills/fable-recover/examples/recovering-stale-test-cache.md)
 
 
 ## DSH host and authorization boundary

@@ -181,8 +181,11 @@ Evaluation completes when:
 - verdict and rollback are evidence-backed;
 - evidence freshness is tied to the exact evaluated corpus/control.
 
-## Progressive Resources
-- Deep guide: `references/benchmark-design-and-overfit-control.md`
+## Resource availability
+
+The upstream resource files referenced in the original source are not present in the pinned upstream repository revision used for this port. The evaluation procedure is included in this skill; do not assume those separate guides or examples are available.
+
+
 - Existing protocol: `references/eval-harness-protocol.md`
 - Example: `examples/eval-regression-run.md`
 

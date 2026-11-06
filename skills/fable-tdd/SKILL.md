@@ -201,9 +201,9 @@ TDD completes when:
 - `fable-verify` receives enough evidence to independently falsify the result.
 
 ## Progressive Resources
-- Deep strategy: `references/test-strategy-and-hard-cases.md`
-- Existing cycle reference: `references/red-green-refactor.md`
-- Example: `examples/failing-test-first.md`
+- Deep strategy: [references/test-strategy-and-hard-cases.md](https://github.com/imMamdouhaboammar/get-fable/blob/36920932251ffc619da6073eb02cb35a9a2f2dbf/skills/fable-tdd/references/test-strategy-and-hard-cases.md)
+- Existing cycle reference: [references/red-green-refactor.md](https://github.com/imMamdouhaboammar/get-fable/blob/36920932251ffc619da6073eb02cb35a9a2f2dbf/skills/fable-tdd/references/red-green-refactor.md)
+- Example: [examples/failing-test-first.md](https://github.com/imMamdouhaboammar/get-fable/blob/36920932251ffc619da6073eb02cb35a9a2f2dbf/skills/fable-tdd/examples/failing-test-first.md)
 
 
 ## DSH host and authorization boundary

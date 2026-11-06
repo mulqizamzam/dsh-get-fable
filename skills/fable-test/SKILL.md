@@ -172,9 +172,11 @@ A testing task is complete only when:
 
 ---
 
-## Progressive Resources
+## Resource availability
 
-- [The Nine Universal Test-Guard Rules](https://github.com/imMamdouhaboammar/get-fable/blob/fb0b98143b1cb0c34df6b77d3b948204488fc87d/skills/fable-test/references/test-guard-rules.md): In-depth violation patterns and fixes.
+The four upstream reference URLs in the source skill resolve to 404 at their pinned revision and are not bundled in this port. The core test workflow is included above; do not rely on those unavailable files.
+
+
 - [Stack Discovery Guide](https://github.com/imMamdouhaboammar/get-fable/blob/fb0b98143b1cb0c34df6b77d3b948204488fc87d/skills/fable-test/references/stack-discovery.md): Taxonomy of project runtimes and test runners.
 - [Test-Value Calculus & Anti-Brittleness Guard](https://github.com/imMamdouhaboammar/get-fable/blob/fb0b98143b1cb0c34df6b77d3b948204488fc87d/skills/fable-test/references/test-value-calculus.md): The 3-questions calculus and zero-selection prevention.
 - [Tool Dispatch Matrix](https://github.com/imMamdouhaboammar/get-fable/blob/fb0b98143b1cb0c34df6b77d3b948204488fc87d/skills/fable-test/references/tool-dispatch.md): How to route to TDD, Midscene, Keploy, and Anti-Slop.

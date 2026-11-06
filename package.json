@@ -13,7 +13,10 @@
     "NOTICE",
     "docs/PORTING.md",
     "scripts/validate-bundle.mjs",
-    "scripts/smoke-provider.mjs"
+    "scripts/smoke-provider.mjs",
+    "docs/RESOURCE-INTEGRITY.md",
+    "docs/RESOURCE-MANIFEST.json",
+    "scripts/check-skill-resources.mjs"
   ],
   "engines": {
     "node": ">=22",

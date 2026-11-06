@@ -142,12 +142,12 @@ Spark succeeds when it either:
 - remains silent because intervention would add noise, scope, or speculation.
 
 ## Progressive Resources
-- Deep guide: `references/atomic-action-and-silence.md`
-- Next-move policy: `references/next-move-policy.md`
-- Silence: `references/silence-policy.md`
-- Evidence/gates: `references/evidence-and-gates.md`
-- Confidence: `references/confidence-policy.md`
-- Example: `examples/situational-awareness-walkthrough.md`
+- Deep guide: [references/atomic-action-and-silence.md](https://github.com/imMamdouhaboammar/get-fable/blob/36920932251ffc619da6073eb02cb35a9a2f2dbf/skills/fable-spark/references/atomic-action-and-silence.md)
+- Next-move policy: [references/next-move-policy.md](https://github.com/imMamdouhaboammar/get-fable/blob/36920932251ffc619da6073eb02cb35a9a2f2dbf/skills/fable-spark/references/next-move-policy.md)
+- Silence: [references/silence-policy.md](https://github.com/imMamdouhaboammar/get-fable/blob/36920932251ffc619da6073eb02cb35a9a2f2dbf/skills/fable-spark/references/silence-policy.md)
+- Evidence/gates: [references/evidence-and-gates.md](https://github.com/imMamdouhaboammar/get-fable/blob/36920932251ffc619da6073eb02cb35a9a2f2dbf/skills/fable-spark/references/evidence-and-gates.md)
+- Confidence: [references/confidence-policy.md](https://github.com/imMamdouhaboammar/get-fable/blob/36920932251ffc619da6073eb02cb35a9a2f2dbf/skills/fable-spark/references/confidence-policy.md)
+- Example: [examples/situational-awareness-walkthrough.md](https://github.com/imMamdouhaboammar/get-fable/blob/36920932251ffc619da6073eb02cb35a9a2f2dbf/skills/fable-spark/examples/situational-awareness-walkthrough.md)
 
 
 ## DSH host and authorization boundary

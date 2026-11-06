@@ -155,9 +155,11 @@ A core testing run is complete when:
 
 ---
 
-## Progressive Resources
+## Resource availability
 
-- `references/test-pyramid-and-tiers.md`: Detailed breakdown of all 7 tiers.
+No separate supporting reference files are bundled for this port-only specialist. Use the complete procedure in this skill; do not assume the upstream guide files named in the source exist locally.
+
+
 - `references/anti-slop-and-diff-guard.md`: Anti-slop AST scanning specifications.
 - `references/neural-test-and-differential-oracles.md`: Neural oracle architecture.
 - `references/e2e-and-cypress-guide.md`: Cypress browser testing setup.

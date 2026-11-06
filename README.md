@@ -121,3 +121,8 @@ Port ini diturunkan dari [imMamdouhaboammar/get-fable](https://github.com/imMamd
 ## Pengembangan
 
 Lihat `docs/PORTING.md` untuk keputusan port, target versi harness, komponen yang dipertahankan, batasan, serta status validasi. Untuk perubahan plugin, lakukan validasi format manifest, struktur bundle, katalog skill, dan smoke test pada DSH `0.2.1-rc.2` sebelum menyatakan port siap produksi.
+
+
+## Supporting resource integrity
+
+The 75 bundled skill instructions reference supporting material selectively. A repository-wide audit identified 140 file references: 128 exist in upstream get-fable at immutable commit `36920932251ffc619da6073eb02cb35a9a2f2dbf` and are linked directly to those pinned files; 12 references belong to port-only specialists and do not exist in that upstream revision, so they are explicitly marked unavailable rather than linked to guessed paths. The port currently ships no local copies of these 128 supporting files; using them requires network access. See [Resource Integrity](docs/RESOURCE-INTEGRITY.md) and the machine-readable [resource manifest](docs/RESOURCE-MANIFEST.json).

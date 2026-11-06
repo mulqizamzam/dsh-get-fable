@@ -155,10 +155,10 @@ A handoff is complete when a zero-context receiving agent can:
 - execute the next action without asking for missing basic context.
 
 ## Progressive Resources
-- Deep guide: `references/resumability-and-context-compaction.md`
-- Existing schema: `references/continuity-schema.md`
-- Template: `templates/handoff-state.template.md`
-- Example: `examples/cross-session-handoff.md`
+- Deep guide: [references/resumability-and-context-compaction.md](https://github.com/imMamdouhaboammar/get-fable/blob/36920932251ffc619da6073eb02cb35a9a2f2dbf/skills/fable-handoff/references/resumability-and-context-compaction.md)
+- Existing schema: [references/continuity-schema.md](https://github.com/imMamdouhaboammar/get-fable/blob/36920932251ffc619da6073eb02cb35a9a2f2dbf/skills/fable-handoff/references/continuity-schema.md)
+- Template: [templates/handoff-state.template.md](https://github.com/imMamdouhaboammar/get-fable/blob/36920932251ffc619da6073eb02cb35a9a2f2dbf/skills/fable-handoff/templates/handoff-state.template.md)
+- Example: [examples/cross-session-handoff.md](https://github.com/imMamdouhaboammar/get-fable/blob/36920932251ffc619da6073eb02cb35a9a2f2dbf/skills/fable-handoff/examples/cross-session-handoff.md)
 
 
 ## DSH host and authorization boundary
