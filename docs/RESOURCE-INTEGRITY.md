@@ -6,11 +6,11 @@
 
 ## Findings
 
-The initial inspection found no local supporting-resource files under any skill directory. The skill instructions contained 140 explicit file references across the port:
+The initial inspection found no local supporting-resource files under any skill directory. The skill instructions contained 129 explicit file references across the port:
 
 | Classification | Count | Treatment |
 |---|---:|---|
-| Exists in pinned upstream | 128 | Rewritten as direct, immutable GitHub file links |
+| Exists in pinned upstream | 117 | Rewritten as direct, immutable GitHub file links |
 | Does not exist in pinned upstream | 12 | Removed as active resource links and disclosed as unavailable |
 | Local copies included in this bundle | 0 | Explicitly documented; network access is required for linked material |
 
@@ -29,7 +29,7 @@ These resources are not replaced with invented documents or placeholder files. T
 - The domain adapter directory is linked to the canonical `fable-method/references/domains` directory in upstream.
 - Existing anti-churn and anti-slop-engineering links were moved from an older pin to the audited source pin.
 - The red-team skill remains guidance-only; its upstream active-testing resources are intentionally not linked or packaged.
-- The 128 supporting files are **not vendored**. Their links resolve to upstream GitHub content and require network access. This is a documented portability limitation, not a local-resource bundle.
+- The 117 supporting files are **not vendored**. Their links resolve to upstream GitHub content and require network access. This is a documented portability limitation, not a local-resource bundle.
 
 ## Reproducible validation
 

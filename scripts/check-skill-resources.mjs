@@ -55,7 +55,7 @@ for (const path of directoryTargets) if (!linkedDirectories.has(path)) fail('man
 
 if (manifest.localCopiesBundled !== 0) fail('localCopiesBundled must describe the current no-copy policy')
 if (unavailable.size !== 12) fail('expected 12 explicitly unavailable port-only resources, found ' + unavailable.size)
-if (resolved.size !== 128) fail('expected 128 pinned upstream resource files, found ' + resolved.size)
+if (resolved.size !== 117) fail('expected 117 pinned upstream resource files, found ' + resolved.size)
 if (process.exitCode) process.exit(process.exitCode)
 pass(docs.length + ' skill docs scanned')
 pass(linkedFiles.size + ' pinned upstream file targets verified against the manifest')

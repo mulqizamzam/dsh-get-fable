@@ -183,12 +183,7 @@ Evaluation completes when:
 
 ## Resource availability
 
-The upstream resource files referenced in the original source are not present in the pinned upstream repository revision used for this port. The evaluation procedure is included in this skill; do not assume those separate guides or examples are available.
-
-
-- Existing protocol: `references/eval-harness-protocol.md`
-- Example: `examples/eval-regression-run.md`
-
+The supporting guides and example referenced in the original skill are not present in the pinned upstream repository revision. The evaluation procedure in this skill is authoritative; do not attempt to load unavailable files.
 
 ## DSH host and authorization boundary
 
