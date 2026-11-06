@@ -43,9 +43,9 @@ function readSkillMetadata(source, filePath) {
   }
   const description = parseQuotedScalar(rawDescription)
   const readBoolean = (key, fallback) => {
-    const line = lines.find(item => new RegExp('^' + key + ':\\s*').test(item))
+    const line = lines.find(item => item.startsWith(key + ':'))
     if (!line) return fallback
-    const raw = line.replace(new RegExp('^' + key + ':\\s*'), '').trim()
+    const raw = line.slice(key.length + 1).trim()
     if (raw !== 'true' && raw !== 'false') {
       throw new Error('Invalid boolean frontmatter field ' + key + ' in ' + filePath)
     }
@@ -115,7 +115,6 @@ export function apply(ctx) {
           locator: skill.slug,
           source: 'bundled',
           provider: providerName,
-          invocation: { modelInvocable: true, userInvocable: true },
           resourceBase,
         }))
       },
@@ -141,7 +140,6 @@ export function apply(ctx) {
           content: source.slice(metadata.frontmatter.length).trimStart(),
           source: 'bundled',
           provider: providerName,
-          invocation: { modelInvocable: true, userInvocable: true },
           resourceBase,
         }
       },

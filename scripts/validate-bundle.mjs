@@ -21,7 +21,7 @@ else pass('Cordis patch registration')
 const skillRoot = join(rootPath, 'skills')
 const dirs = (await readdir(skillRoot, { withFileTypes: true })).filter(entry => entry.isDirectory()).map(entry => entry.name).sort()
 if (dirs.length !== 75) fail('expected 75 bundled skills (47 original/port-specific skills plus 28 flattened Wise specialists), found ' + dirs.length)
-else pass('47 bundled skill directories found')
+else pass('75 bundled skill directories found')
 const names = new Set()
 for (const dir of dirs) {
   const path = join(skillRoot, dir, 'SKILL.md')
@@ -34,8 +34,11 @@ for (const dir of dirs) {
     if (name !== dir) fail(dir + ': frontmatter name mismatch (' + (name || 'missing') + ')')
     if (!description) fail(dir + ': missing description')
     for (const key of ['disable-model-invocation', 'user-invocable']) {
-      const flag = fm[1].match(new RegExp('^' + key + ':\\s*(\\S+)\\s*$', 'm'))
-      if (flag && flag[1] !== 'true' && flag[1] !== 'false') fail(dir + ': invalid boolean frontmatter value for ' + key)
+      const valueLine = fm[1].split('\n').find(line => line.startsWith(key + ':'))
+      if (valueLine) {
+        const value = valueLine.slice(key.length + 1).trim()
+        if (value !== 'true' && value !== 'false') fail(dir + ': invalid boolean frontmatter value for ' + key)
+      }
     }
     if (names.has(name)) fail('duplicate skill name ' + name)
     names.add(name)
@@ -68,10 +71,14 @@ const userInvokedOnly = new Set(['re0-upgrade', 're0-plan', 'debloat', 'dedash',
 for (const id of expectedWiseSkills) {
   if (!ids.has(id) || !dirs.includes(id) || !wise.includes('`' + id + '`')) fail('missing Wise specialist route or bundle entry: ' + id)
   const source = await readFile(join(skillRoot, id, 'SKILL.md'), 'utf8')
-  const flag = /^disable-model-invocation:\\s*true\\s*$/m.test(source.match(/^---\\s*\\n([\\s\\S]*?)\\n---/m)?.[1] || '')
+  const sourceLines = source.split('\n')
+  const closingFrontmatter = sourceLines.indexOf('---', 1)
+  const sourceFrontmatter = closingFrontmatter > 0 ? sourceLines.slice(1, closingFrontmatter) : []
+  const disableLine = sourceFrontmatter.find(line => line.startsWith('disable-model-invocation:'))
+  const flag = disableLine?.slice('disable-model-invocation:'.length).trim() === 'true'
   if (flag !== userInvokedOnly.has(id)) fail(id + ': upstream user-invoked-only policy was not preserved')
 }
-if (!redteam.includes('guidance-only security-review procedure') || redteam.includes('Full Audit Mode') || redteam.includes('Use native TS HTTP probe') || redteam.includes('Cloudflare Audit Adapter') || redteam.includes('report-schema.json compliance')) fail('red-team skill still claims a scanner/runtime that is not shipped')
+if (!redteam.includes('guidance-only security review') || redteam.includes('Full Audit Mode') || redteam.includes('Use native TS HTTP probe') || redteam.includes('Cloudflare Audit Adapter') || redteam.includes('report-schema.json compliance')) fail('red-team skill still claims a scanner/runtime that is not shipped')
 
 const bugRouteIndex = router.indexOf('bug report with unknown causal mechanism → `fable-bug-hunt`')
 const designRouteIndex = router.indexOf('blocking unknown that changes design on a non-bug task → discover/research/plan')
