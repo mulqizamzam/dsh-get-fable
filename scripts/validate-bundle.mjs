@@ -50,10 +50,10 @@ for (const dir of dirs) {
   }
 }
 const registry = await readJson('skills/get-fable/registry.json')
+const ids = new Set(registry.skills.map(skill => skill.id))
 if (registry.schemaVersion !== 2 || registry.entry !== 'get-fable' || !Array.isArray(registry.skills)) {
   fail('invalid canonical routing registry')
 } else {
-  const ids = new Set(registry.skills.map(skill => skill.id))
   if (ids.size !== 75 || ids.size !== registry.skills.length) fail('routing registry must contain 75 unique skills')
   if (dirs.some(dir => !ids.has(dir)) || [...ids].some(id => !dirs.includes(id))) fail('routing registry and skill directories differ')
   for (const skill of registry.skills) {
