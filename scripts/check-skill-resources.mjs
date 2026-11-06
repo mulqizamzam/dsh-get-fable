@@ -41,8 +41,9 @@ for (const doc of docs) {
       if (!resolved.has(path)) fail(doc.name + ': resource URL missing from manifest ' + path)
       linkedFiles.add(path)
     } else {
-      if (!directoryTargets.has(path)) fail(doc.name + ': directory URL missing from manifest ' + path)
-      linkedDirectories.add(path)
+      const directoryPath = path.replace(/\/$/, '')
+      if (!directoryTargets.has(directoryPath)) fail(doc.name + ': directory URL missing from manifest ' + path)
+      linkedDirectories.add(directoryPath)
     }
   }
 }
