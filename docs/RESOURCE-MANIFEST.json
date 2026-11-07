@@ -1,8 +1,16 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "upstreamRepository": "imMamdouhaboammar/get-fable",
   "upstreamCommit": "36920932251ffc619da6073eb02cb35a9a2f2dbf",
-  "localCopiesBundled": 0,
+  "upstreamLicense": "AGPL-3.0-or-later",
+  "sourceBaseUrl": "https://github.com/imMamdouhaboammar/get-fable/tree/36920932251ffc619da6073eb02cb35a9a2f2dbf",
+  "localCopiesBundled": 125,
+  "resourceCounts": {
+    "explicitResolvedReferences": 117,
+    "additionalDomainDirectoryFiles": 8,
+    "bundledSupportingFiles": 125,
+    "unavailablePortOnlyReferences": 12
+  },
   "resolvedPaths": [
     "skills/fable-anti-churn/references/CLAUDE-INSTALL.md",
     "skills/fable-anti-churn/references/CODEX-INSTALL.md",
@@ -75,6 +83,14 @@
     "skills/fable-memory/references/memory-management-protocol.md",
     "skills/fable-memory/templates/memory-fact.template.md",
     "skills/fable-method/references/domains/TEMPLATE.md",
+    "skills/fable-method/references/domains/business-ops.md",
+    "skills/fable-method/references/domains/data-analysis.md",
+    "skills/fable-method/references/domains/design-ux.md",
+    "skills/fable-method/references/domains/devops.md",
+    "skills/fable-method/references/domains/finance.md",
+    "skills/fable-method/references/domains/legal-compliance.md",
+    "skills/fable-method/references/domains/marketing.md",
+    "skills/fable-method/references/domains/research.md",
     "skills/fable-plan/examples/multi-file-migration-plan.md",
     "skills/fable-plan/references/decomposition-rules.md",
     "skills/fable-plan/references/risk-and-dependency-decomposition.md",
@@ -139,8 +155,17 @@
   "directoryTargets": [
     "skills/fable-method/references/domains"
   ],
+  "licenseFiles": [
+    "LICENSES/GET-FABLE-AGPL-3.0-or-later.txt",
+    "LICENSES/FABLE-WISE-MIT.txt",
+    "LICENSES/FABLE-WISE-NOTICE.txt",
+    "LICENSES/FABLE-COUNCIL-MIT.txt"
+  ],
   "notes": [
-    "Resolved resources are linked to immutable files or directories at the pinned upstream commit; they are not copied into this bundle.",
-    "Port-only resources that do not exist at the pinned upstream commit are intentionally not linked. Their skill instructions state the limitation."
+    "All available supporting files are copied into this repository at their upstream-relative paths and are available without fetching the upstream repository.",
+    "The 117 explicitly referenced files are bundled, plus eight additional domain adapter files from the linked directory; TEMPLATE.md overlaps the explicit set.",
+    "The main get-fable resources are distributed under AGPL-3.0-or-later. The upstream license text and separate MIT license/notice files for Fable Wise and Fable Council are preserved under LICENSES/.",
+    "The 12 port-only references missing from the pinned upstream commit remain excluded and are not replaced with guessed or placeholder content.",
+    "Skill documents use relative paths for these local supporting resources."
   ]
 }

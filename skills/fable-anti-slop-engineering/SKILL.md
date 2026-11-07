@@ -109,15 +109,15 @@ For each implementation/review, produce a concise report in this order: **Outcom
 
 ## Progressive Resources
 
-- [Anti-Pattern Catalog](https://github.com/imMamdouhaboammar/get-fable/blob/36920932251ffc619da6073eb02cb35a9a2f2dbf/skills/fable-anti-slop-engineering/references/anti-pattern-catalog.md) — Exhaustive directory of AI coding anti-patterns with before/after fixes.
-- [Test Integrity Policy](https://github.com/imMamdouhaboammar/get-fable/blob/36920932251ffc619da6073eb02cb35a9a2f2dbf/skills/fable-anti-slop-engineering/references/test-integrity.md) — Rules for assertion preservation, boundary testing, and test refactoring.
-- [PR Review Protocol](https://github.com/imMamdouhaboammar/get-fable/blob/36920932251ffc619da6073eb02cb35a9a2f2dbf/skills/fable-anti-slop-engineering/references/pr-review.md) — Skeptical reviewer checklist and structured finding templates.
-- [Security & Operations](https://github.com/imMamdouhaboammar/get-fable/blob/36920932251ffc619da6073eb02cb35a9a2f2dbf/skills/fable-anti-slop-engineering/references/security-and-operations.md) — Trust boundaries, credential hygiene, and operational safety.
-- [Engineering Judgment](https://github.com/imMamdouhaboammar/get-fable/blob/36920932251ffc619da6073eb02cb35a9a2f2dbf/skills/fable-anti-slop-engineering/references/engineering-judgment.md) — Context-aware exception criteria and design tradeoffs.
-- [Evidence & Sources](https://github.com/imMamdouhaboammar/get-fable/blob/36920932251ffc619da6073eb02cb35a9a2f2dbf/skills/fable-anti-slop-engineering/references/evidence-and-sources.md) — Concrete proof hierarchies and verification standards.
-- [Evaluation Cases](https://github.com/imMamdouhaboammar/get-fable/blob/36920932251ffc619da6073eb02cb35a9a2f2dbf/skills/fable-anti-slop-engineering/references/evaluation-cases.md) — Real-world evaluation benchmark cases.
-- [PR Review Template](https://github.com/imMamdouhaboammar/get-fable/blob/36920932251ffc619da6073eb02cb35a9a2f2dbf/skills/fable-anti-slop-engineering/templates/PR_REVIEW_TEMPLATE.md) — Reusable PR review markdown template.
-- [Run Report Template](https://github.com/imMamdouhaboammar/get-fable/blob/36920932251ffc619da6073eb02cb35a9a2f2dbf/skills/fable-anti-slop-engineering/templates/RUN_REPORT_TEMPLATE.md) — Reusable implementation run report template.
+- [Anti-Pattern Catalog](references/anti-pattern-catalog.md) — Exhaustive directory of AI coding anti-patterns with before/after fixes.
+- [Test Integrity Policy](references/test-integrity.md) — Rules for assertion preservation, boundary testing, and test refactoring.
+- [PR Review Protocol](references/pr-review.md) — Skeptical reviewer checklist and structured finding templates.
+- [Security & Operations](references/security-and-operations.md) — Trust boundaries, credential hygiene, and operational safety.
+- [Engineering Judgment](references/engineering-judgment.md) — Context-aware exception criteria and design tradeoffs.
+- [Evidence & Sources](references/evidence-and-sources.md) — Concrete proof hierarchies and verification standards.
+- [Evaluation Cases](references/evaluation-cases.md) — Real-world evaluation benchmark cases.
+- [PR Review Template](templates/PR_REVIEW_TEMPLATE.md) — Reusable PR review markdown template.
+- [Run Report Template](templates/RUN_REPORT_TEMPLATE.md) — Reusable implementation run report template.
 
 
 ## DSH host and authorization boundary

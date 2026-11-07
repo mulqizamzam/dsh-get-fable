@@ -56,4 +56,10 @@ After installation, verify that DSH's skill catalog lists all bundled Fable skil
 
 ## Supporting resource integrity
 
-The 75 bundled skill instructions reference supporting material selectively. A repository-wide audit identified 129 explicit file references: 117 exist in upstream get-fable at immutable commit `36920932251ffc619da6073eb02cb35a9a2f2dbf` and are linked directly to those pinned files; 12 references belong to port-only specialists and do not exist in that upstream revision, so they are explicitly marked unavailable rather than linked to guessed paths. The port currently ships no local copies of these 128 supporting files; using them requires network access. See [Resource Integrity](docs/RESOURCE-INTEGRITY.md) and the machine-readable [resource manifest](docs/RESOURCE-MANIFEST.json).
+The source audit found 129 explicit supporting-file references across the 75 skill documents. At the pinned upstream revision, 117 existed and are now copied into this repository at matching relative paths; 12 port-only references were absent and remain explicitly unavailable. The domain-adapter folder link covers nine files, one of which is already included in the 117 explicit resources, so eight additional files were vendored. The bundle therefore contains 125 local supporting files.
+
+All 121 resource links across 29 skill documents now resolve to relative local paths. The resource bundle can be read offline after cloning this repository. The upstream source commit is recorded in `docs/RESOURCE-MANIFEST.json`.
+
+The main get-fable content and resource files use AGPL-3.0-or-later. The source license text and separate MIT license/NOTICE files for Fable Wise and Fable Council are preserved under `LICENSES/`; the separate license terms and attributions remain applicable to those portions.
+
+Run `node scripts/check-skill-resources.mjs` to verify all 125 files, relative links, the domain directory, the 12 unavailable paths, and preserved license files. A complete inventory and rationale are in [Resource Integrity](RESOURCE-INTEGRITY.md).

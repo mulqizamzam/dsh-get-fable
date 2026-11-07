@@ -166,9 +166,9 @@ Loop completes when:
 - final receipt shows exactly why looping ended and what should happen next.
 
 ## Progressive Resources
-- Deep guide: [references/polling-state-machines-and-backoff.md](https://github.com/imMamdouhaboammar/get-fable/blob/36920932251ffc619da6073eb02cb35a9a2f2dbf/skills/fable-loop/references/polling-state-machines-and-backoff.md)
-- Existing guidelines: [references/loop-control-guidelines.md](https://github.com/imMamdouhaboammar/get-fable/blob/36920932251ffc619da6073eb02cb35a9a2f2dbf/skills/fable-loop/references/loop-control-guidelines.md)
-- Example: [examples/poll-build-job.md](https://github.com/imMamdouhaboammar/get-fable/blob/36920932251ffc619da6073eb02cb35a9a2f2dbf/skills/fable-loop/examples/poll-build-job.md)
+- Deep guide: [references/polling-state-machines-and-backoff.md](references/polling-state-machines-and-backoff.md)
+- Existing guidelines: [references/loop-control-guidelines.md](references/loop-control-guidelines.md)
+- Example: [examples/poll-build-job.md](examples/poll-build-job.md)
 
 
 ## DSH host and authorization boundary

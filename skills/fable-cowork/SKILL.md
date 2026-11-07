@@ -153,9 +153,9 @@ Cowork completes when:
 - report begins with actual outcome, not process narration.
 
 ## Progressive Resources
-- Deep guide: [references/autonomy-boundaries-and-checkpoints.md](https://github.com/imMamdouhaboammar/get-fable/blob/36920932251ffc619da6073eb02cb35a9a2f2dbf/skills/fable-cowork/references/autonomy-boundaries-and-checkpoints.md)
-- Existing discipline: [references/silent-execution-discipline.md](https://github.com/imMamdouhaboammar/get-fable/blob/36920932251ffc619da6073eb02cb35a9a2f2dbf/skills/fable-cowork/references/silent-execution-discipline.md)
-- Example: [examples/silent-refactor-session.md](https://github.com/imMamdouhaboammar/get-fable/blob/36920932251ffc619da6073eb02cb35a9a2f2dbf/skills/fable-cowork/examples/silent-refactor-session.md)
+- Deep guide: [references/autonomy-boundaries-and-checkpoints.md](references/autonomy-boundaries-and-checkpoints.md)
+- Existing discipline: [references/silent-execution-discipline.md](references/silent-execution-discipline.md)
+- Example: [examples/silent-refactor-session.md](examples/silent-refactor-session.md)
 
 
 ## DSH host and authorization boundary

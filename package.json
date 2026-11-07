@@ -16,7 +16,8 @@
     "scripts/smoke-provider.mjs",
     "docs/RESOURCE-INTEGRITY.md",
     "docs/RESOURCE-MANIFEST.json",
-    "scripts/check-skill-resources.mjs"
+    "scripts/check-skill-resources.mjs",
+    "LICENSES/"
   ],
   "engines": {
     "node": ">=22",

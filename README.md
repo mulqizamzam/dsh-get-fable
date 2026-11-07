@@ -116,13 +116,15 @@ Port ini menyediakan **75 skill tingkat atas** di `skills/`: 41 ID dari registry
 
 ## Lisensi dan asal
 
-Port ini diturunkan dari [imMamdouhaboammar/get-fable](https://github.com/imMamdouhaboammar/get-fable). Periksa berkas `LICENSE` dan pertahankan pemberitahuan lisensi/hak cipta saat mendistribusikan perubahan. Proyek ini merupakan port komunitas dan tidak menyatakan afiliasi resmi dengan DeepSeek.
+Port ini diturunkan dari [imMamdouhaboammar/get-fable](https://github.com/imMamdouhaboammar/get-fable) pada commit upstream yang tercatat di `docs/RESOURCE-MANIFEST.json`. Materi utama get-fable dan 125 resource pendukung lokal menggunakan AGPL-3.0-or-later; salinan teks lisensi upstream tersedia di `LICENSES/GET-FABLE-AGPL-3.0-or-later.txt`. Materi Fable Wise dan Fable Council memiliki pemberitahuan MIT tersendiri yang dipertahankan di folder `LICENSES/`. Periksa seluruh pemberitahuan lisensi sebelum mendistribusikan perubahan. Proyek ini merupakan port komunitas dan tidak menyatakan afiliasi resmi dengan DeepSeek.
 
 ## Pengembangan
 
 Lihat `docs/PORTING.md` untuk keputusan port, target versi harness, komponen yang dipertahankan, batasan, serta status validasi. Untuk perubahan plugin, lakukan validasi format manifest, struktur bundle, katalog skill, dan smoke test pada DSH `0.2.1-rc.2` sebelum menyatakan port siap produksi.
 
 
-## Supporting resource integrity
+## Resource pendukung dan penggunaan offline
 
-The 75 bundled skill instructions reference supporting material selectively. A repository-wide audit identified 129 explicit file references: 117 exist in upstream get-fable at immutable commit `36920932251ffc619da6073eb02cb35a9a2f2dbf` and are linked directly to those pinned files; 12 references belong to port-only specialists and do not exist in that upstream revision, so they are explicitly marked unavailable rather than linked to guessed paths. The port currently ships no local copies of these 128 supporting files; using them requires network access. See [Resource Integrity](docs/RESOURCE-INTEGRITY.md) and the machine-readable [resource manifest](docs/RESOURCE-MANIFEST.json).
+Port ini menyertakan **125 berkas resource pendukung secara lokal**: 117 file yang dirujuk secara eksplisit oleh skill dan delapan adapter domain tambahan dari direktori domain. Tautan di 29 dokumen skill telah diubah menjadi path relatif, sehingga berkas tersebut dapat dibaca tanpa mengambil file dari upstream setelah repositori di-clone. Dua belas referensi khusus port yang memang tidak tersedia pada revisi upstream tetap dinyatakan tidak tersedia; tidak ada dokumen pengganti yang dikarang.
+
+Rincian sumber, lisensi, daftar file, dan pemeriksaan otomatis tersedia pada [Resource Integrity](docs/RESOURCE-INTEGRITY.md) dan [manifest resource](docs/RESOURCE-MANIFEST.json). Jalankan `node scripts/check-skill-resources.mjs` untuk memvalidasi kelengkapan bundle.

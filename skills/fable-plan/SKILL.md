@@ -165,10 +165,10 @@ Planning is complete when:
 - parallel work, if proposed, has explicit semantic ownership and integration proof.
 
 ## Progressive Resources
-- Deep decomposition guide: [references/risk-and-dependency-decomposition.md](https://github.com/imMamdouhaboammar/get-fable/blob/36920932251ffc619da6073eb02cb35a9a2f2dbf/skills/fable-plan/references/risk-and-dependency-decomposition.md)
-- Existing decomposition rules: [references/decomposition-rules.md](https://github.com/imMamdouhaboammar/get-fable/blob/36920932251ffc619da6073eb02cb35a9a2f2dbf/skills/fable-plan/references/decomposition-rules.md)
-- Template: [templates/work-card.template.md](https://github.com/imMamdouhaboammar/get-fable/blob/36920932251ffc619da6073eb02cb35a9a2f2dbf/skills/fable-plan/templates/work-card.template.md)
-- Example: [examples/multi-file-migration-plan.md](https://github.com/imMamdouhaboammar/get-fable/blob/36920932251ffc619da6073eb02cb35a9a2f2dbf/skills/fable-plan/examples/multi-file-migration-plan.md)
+- Deep decomposition guide: [references/risk-and-dependency-decomposition.md](references/risk-and-dependency-decomposition.md)
+- Existing decomposition rules: [references/decomposition-rules.md](references/decomposition-rules.md)
+- Template: [templates/work-card.template.md](templates/work-card.template.md)
+- Example: [examples/multi-file-migration-plan.md](examples/multi-file-migration-plan.md)
 
 
 ## DSH host and authorization boundary

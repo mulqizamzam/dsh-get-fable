@@ -173,10 +173,10 @@ Security work completes when:
 - verdict states exactly what security property was checked and what remains not checked.
 
 ## Progressive Resources
-- Deep guide: [references/trust-boundary-and-finding-validation.md](https://github.com/imMamdouhaboammar/get-fable/blob/36920932251ffc619da6073eb02cb35a9a2f2dbf/skills/fable-security/references/trust-boundary-and-finding-validation.md)
-- Existing threat matrix: [references/threat-modeling-matrix.md](https://github.com/imMamdouhaboammar/get-fable/blob/36920932251ffc619da6073eb02cb35a9a2f2dbf/skills/fable-security/references/threat-modeling-matrix.md)
-- Secret hygiene: [references/secret-sanitization.md](https://github.com/imMamdouhaboammar/get-fable/blob/36920932251ffc619da6073eb02cb35a9a2f2dbf/skills/fable-security/references/secret-sanitization.md)
-- Example: [examples/security-audit-walkthrough.md](https://github.com/imMamdouhaboammar/get-fable/blob/36920932251ffc619da6073eb02cb35a9a2f2dbf/skills/fable-security/examples/security-audit-walkthrough.md)
+- Deep guide: [references/trust-boundary-and-finding-validation.md](references/trust-boundary-and-finding-validation.md)
+- Existing threat matrix: [references/threat-modeling-matrix.md](references/threat-modeling-matrix.md)
+- Secret hygiene: [references/secret-sanitization.md](references/secret-sanitization.md)
+- Example: [examples/security-audit-walkthrough.md](examples/security-audit-walkthrough.md)
 
 
 ## DSH host and authorization boundary

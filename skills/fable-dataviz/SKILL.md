@@ -189,9 +189,9 @@ Visualization completes when:
 - no claim exceeds what the data supports.
 
 ## Progressive Resources
-- Deep guide: [references/truthful-chart-selection-and-validation.md](https://github.com/imMamdouhaboammar/get-fable/blob/36920932251ffc619da6073eb02cb35a9a2f2dbf/skills/fable-dataviz/references/truthful-chart-selection-and-validation.md)
-- Existing design system: [references/dataviz-design-system.md](https://github.com/imMamdouhaboammar/get-fable/blob/36920932251ffc619da6073eb02cb35a9a2f2dbf/skills/fable-dataviz/references/dataviz-design-system.md)
-- Example: [examples/render-bar-chart.md](https://github.com/imMamdouhaboammar/get-fable/blob/36920932251ffc619da6073eb02cb35a9a2f2dbf/skills/fable-dataviz/examples/render-bar-chart.md)
+- Deep guide: [references/truthful-chart-selection-and-validation.md](references/truthful-chart-selection-and-validation.md)
+- Existing design system: [references/dataviz-design-system.md](references/dataviz-design-system.md)
+- Example: [examples/render-bar-chart.md](examples/render-bar-chart.md)
 
 
 ## DSH host and authorization boundary

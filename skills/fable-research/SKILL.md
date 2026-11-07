@@ -146,9 +146,9 @@ Research is complete when:
 - no load-bearing parameter or semantic remains ambiguous.
 
 ## Progressive Resources
-- Deep guide: [references/source-reconciliation-playbook.md](https://github.com/imMamdouhaboammar/get-fable/blob/36920932251ffc619da6073eb02cb35a9a2f2dbf/skills/fable-research/references/source-reconciliation-playbook.md)
-- Existing hierarchy: [references/primary-source-hierarchy.md](https://github.com/imMamdouhaboammar/get-fable/blob/36920932251ffc619da6073eb02cb35a9a2f2dbf/skills/fable-research/references/primary-source-hierarchy.md)
-- Example: [examples/research-api-specs.md](https://github.com/imMamdouhaboammar/get-fable/blob/36920932251ffc619da6073eb02cb35a9a2f2dbf/skills/fable-research/examples/research-api-specs.md)
+- Deep guide: [references/source-reconciliation-playbook.md](references/source-reconciliation-playbook.md)
+- Existing hierarchy: [references/primary-source-hierarchy.md](references/primary-source-hierarchy.md)
+- Example: [examples/research-api-specs.md](examples/research-api-specs.md)
 
 
 ## DSH host and authorization boundary

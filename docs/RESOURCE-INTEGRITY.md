@@ -1,4 +1,4 @@
-# Supporting Resource Integrity Audit
+# Supporting Resource Integrity
 
 **Audit scope:** `mulqizamzam/dsh-get-fable`, PR branch `feature/redteam-guidance-wise-subskills`  
 **Upstream source pin:** `36920932251ffc619da6073eb02cb35a9a2f2dbf`  
@@ -6,30 +6,37 @@
 
 ## Findings
 
-The initial inspection found no local supporting-resource files under any skill directory. The skill instructions contained 129 explicit file references across the port:
+The 75 skill instructions contained 129 explicit supporting-file references:
 
 | Classification | Count | Treatment |
 |---|---:|---|
-| Exists in pinned upstream | 117 | Rewritten as direct, immutable GitHub file links |
-| Does not exist in pinned upstream | 12 | Removed as active resource links and disclosed as unavailable |
-| Local copies included in this bundle | 0 | Explicitly documented; network access is required for linked material |
+| Explicit references present in the pinned upstream source | 117 | Copied into the repository at matching paths |
+| Additional files in the linked domain-adapter directory | 8 | Copied locally; `TEMPLATE.md` was already part of the 117 |
+| Port-only references absent from the pinned upstream source | 12 | Remain unavailable; no invented replacements |
+| **Total local supporting files** | **125** | Bundled and available offline |
 
 The 12 unavailable references belong to port-only specialists:
 
 - `fable-core-test`: four reference guides.
 - `fable-eval`: two reference guides and one example.
 - `fable-skill-creator`: one depth-standard reference.
-- `fable-test`: four reference guides. The source URLs were also checked at their originally pinned revision and returned 404.
+- `fable-test`: four reference guides. The corresponding source paths were checked at the pinned revision and were absent.
 
-These resources are not replaced with invented documents or placeholder files. The corresponding skills now state that the supporting material is unavailable and that the procedure in the skill body is authoritative.
+These files are not replaced with invented documents or placeholders. The corresponding skills state that their supporting material is unavailable and that the procedure in the skill body is authoritative.
 
-## Link strategy
+## Local vendoring and links
 
-- All available upstream file links use commit `36920932251ffc619da6073eb02cb35a9a2f2dbf`, not a moving branch.
-- The domain adapter directory is linked to the canonical `fable-method/references/domains` directory in upstream.
-- Existing anti-churn and anti-slop-engineering links were moved from an older pin to the audited source pin.
-- The red-team skill remains guidance-only; its upstream active-testing resources are intentionally not linked or packaged.
-- The 117 supporting files are **not vendored**. Their links resolve to upstream GitHub content and require network access. This is a documented portability limitation, not a local-resource bundle.
+- All 117 explicitly referenced upstream files are copied at their original repository-relative paths.
+- The domain adapter directory contains nine files. Its `TEMPLATE.md` is already in the explicit 117-file set, so the other eight files are included as additional local resources.
+- 121 links across 29 skill documents were converted from remote GitHub links into relative local links.
+- The source revision is immutable and recorded in `RESOURCE-MANIFEST.json`.
+- Loading the 125 bundled resources does not require network access after this repository has been cloned. Other external references in skill content may still point to public websites.
+
+## License and attribution
+
+The main get-fable resources are covered by the upstream `AGPL-3.0-or-later` license. Its source license text is preserved at `LICENSES/GET-FABLE-AGPL-3.0-or-later.txt`.
+
+The repository also carries separately licensed upstream material. The MIT license and NOTICE for Fable Wise, and the MIT license for Fable Council, are preserved verbatim under `LICENSES/`. Do not treat the repository-level AGPL identifier as removing those file-level MIT permissions or attribution requirements.
 
 ## Reproducible validation
 
@@ -39,6 +46,6 @@ Run:
 node scripts/check-skill-resources.mjs
 ```
 
-The check scans all 75 skill instructions, rejects unresolved relative supporting-resource paths, verifies every upstream link uses the pinned commit and appears in the manifest, checks that every manifest file target is linked, and ensures unavailable resources are not presented as available.
+The check scans all 75 skill instructions, validates all 125 manifest files, checks relative resource links and the domain-adapter directory, rejects remaining remote source links in skill documents, and confirms that unavailable resources are not represented as bundled files.
 
 Machine-readable inventory: [`RESOURCE-MANIFEST.json`](RESOURCE-MANIFEST.json).

@@ -134,13 +134,13 @@ Multiple business domains accessing the same database schema directly. Resolutio
 
 ## Progressive Resources
 
-- Vector scoring guide: [references/vector-scoring.md](https://github.com/imMamdouhaboammar/get-fable/blob/36920932251ffc619da6073eb02cb35a9a2f2dbf/skills/fable-architecture/references/vector-scoring.md)
-- Tech stack matrix: [references/tech-stack-matrix.md](https://github.com/imMamdouhaboammar/get-fable/blob/36920932251ffc619da6073eb02cb35a9a2f2dbf/skills/fable-architecture/references/tech-stack-matrix.md)
-- Communication standards: [references/communication-standards.md](https://github.com/imMamdouhaboammar/get-fable/blob/36920932251ffc619da6073eb02cb35a9a2f2dbf/skills/fable-architecture/references/communication-standards.md)
-- Subagent role distribution: [references/subagent-role-distribution.md](https://github.com/imMamdouhaboammar/get-fable/blob/36920932251ffc619da6073eb02cb35a9a2f2dbf/skills/fable-architecture/references/subagent-role-distribution.md)
-- Example walkthroughs: [examples/fintech-scale-walkthrough.md](https://github.com/imMamdouhaboammar/get-fable/blob/36920932251ffc619da6073eb02cb35a9a2f2dbf/skills/fable-architecture/examples/fintech-scale-walkthrough.md), [examples/ai-media-pipeline-walkthrough.md](https://github.com/imMamdouhaboammar/get-fable/blob/36920932251ffc619da6073eb02cb35a9a2f2dbf/skills/fable-architecture/examples/ai-media-pipeline-walkthrough.md)
-- Templates: [templates/microservices-manifest.toon](https://github.com/imMamdouhaboammar/get-fable/blob/36920932251ffc619da6073eb02cb35a9a2f2dbf/skills/fable-architecture/templates/microservices-manifest.toon), [templates/docker-compose.microservices.yml](https://github.com/imMamdouhaboammar/get-fable/blob/36920932251ffc619da6073eb02cb35a9a2f2dbf/skills/fable-architecture/templates/docker-compose.microservices.yml), [templates/service-contract.proto](https://github.com/imMamdouhaboammar/get-fable/blob/36920932251ffc619da6073eb02cb35a9a2f2dbf/skills/fable-architecture/templates/service-contract.proto)
-- Validation script: [scripts/evaluate-architecture.py](https://github.com/imMamdouhaboammar/get-fable/blob/36920932251ffc619da6073eb02cb35a9a2f2dbf/skills/fable-architecture/scripts/evaluate-architecture.py)
+- Vector scoring guide: [references/vector-scoring.md](references/vector-scoring.md)
+- Tech stack matrix: [references/tech-stack-matrix.md](references/tech-stack-matrix.md)
+- Communication standards: [references/communication-standards.md](references/communication-standards.md)
+- Subagent role distribution: [references/subagent-role-distribution.md](references/subagent-role-distribution.md)
+- Example walkthroughs: [examples/fintech-scale-walkthrough.md](examples/fintech-scale-walkthrough.md), [examples/ai-media-pipeline-walkthrough.md](examples/ai-media-pipeline-walkthrough.md)
+- Templates: [templates/microservices-manifest.toon](templates/microservices-manifest.toon), [templates/docker-compose.microservices.yml](templates/docker-compose.microservices.yml), [templates/service-contract.proto](templates/service-contract.proto)
+- Validation script: [scripts/evaluate-architecture.py](scripts/evaluate-architecture.py)
 
 
 ## DSH host and authorization boundary

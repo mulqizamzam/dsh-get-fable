@@ -177,9 +177,9 @@ Execution completes when:
 - the verification specialist has a precise map of what changed and what remains to falsify.
 
 ## Progressive Resources
-- Deep containment guide: [references/bounded-mutation-and-failure-classification.md](https://github.com/imMamdouhaboammar/get-fable/blob/36920932251ffc619da6073eb02cb35a9a2f2dbf/skills/fable-execute/references/bounded-mutation-and-failure-classification.md)
-- Existing containment reference: [references/mutation-containment.md](https://github.com/imMamdouhaboammar/get-fable/blob/36920932251ffc619da6073eb02cb35a9a2f2dbf/skills/fable-execute/references/mutation-containment.md)
-- Example: [examples/bounded-card-execution.md](https://github.com/imMamdouhaboammar/get-fable/blob/36920932251ffc619da6073eb02cb35a9a2f2dbf/skills/fable-execute/examples/bounded-card-execution.md)
+- Deep containment guide: [references/bounded-mutation-and-failure-classification.md](references/bounded-mutation-and-failure-classification.md)
+- Existing containment reference: [references/mutation-containment.md](references/mutation-containment.md)
+- Example: [examples/bounded-card-execution.md](examples/bounded-card-execution.md)
 
 
 ## DSH host and authorization boundary

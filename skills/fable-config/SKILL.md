@@ -156,9 +156,9 @@ Configuration completes when:
 - rollback and host limitations are explicit.
 
 ## Progressive Resources
-- Deep guide: [references/config-precedence-permissions-and-hooks.md](https://github.com/imMamdouhaboammar/get-fable/blob/36920932251ffc619da6073eb02cb35a9a2f2dbf/skills/fable-config/references/config-precedence-permissions-and-hooks.md)
-- Existing rules: [references/harness-configuration-rules.md](https://github.com/imMamdouhaboammar/get-fable/blob/36920932251ffc619da6073eb02cb35a9a2f2dbf/skills/fable-config/references/harness-configuration-rules.md)
-- Example: [examples/configure-allowlist.md](https://github.com/imMamdouhaboammar/get-fable/blob/36920932251ffc619da6073eb02cb35a9a2f2dbf/skills/fable-config/examples/configure-allowlist.md)
+- Deep guide: [references/config-precedence-permissions-and-hooks.md](references/config-precedence-permissions-and-hooks.md)
+- Existing rules: [references/harness-configuration-rules.md](references/harness-configuration-rules.md)
+- Example: [examples/configure-allowlist.md](examples/configure-allowlist.md)
 
 
 ## DSH host and authorization boundary

@@ -196,9 +196,9 @@ The Skill's work completes when the requested release stage is accurately attest
 - missing authorization/external gates are represented as explicit state, never guessed away.
 
 ## Progressive Resources
-- Deep guide: [references/artifact-and-distribution-verification.md](https://github.com/imMamdouhaboammar/get-fable/blob/36920932251ffc619da6073eb02cb35a9a2f2dbf/skills/fable-release/references/artifact-and-distribution-verification.md)
-- Existing release gates: [references/release-gates.md](https://github.com/imMamdouhaboammar/get-fable/blob/36920932251ffc619da6073eb02cb35a9a2f2dbf/skills/fable-release/references/release-gates.md)
-- Example: [examples/release-readiness-audit.md](https://github.com/imMamdouhaboammar/get-fable/blob/36920932251ffc619da6073eb02cb35a9a2f2dbf/skills/fable-release/examples/release-readiness-audit.md)
+- Deep guide: [references/artifact-and-distribution-verification.md](references/artifact-and-distribution-verification.md)
+- Existing release gates: [references/release-gates.md](references/release-gates.md)
+- Example: [examples/release-readiness-audit.md](examples/release-readiness-audit.md)
 
 
 ## DSH host and authorization boundary

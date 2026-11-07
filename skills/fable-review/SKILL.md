@@ -176,10 +176,10 @@ Review completes when:
 - verdict is APPROVE, CHANGES_REQUIRED, or INCOMPLETE with evidence.
 
 ## Progressive Resources
-- Alibaba OCR Rulesets & Delegation Guide: [references/alibaba-ocr-rulesets.md](https://github.com/imMamdouhaboammar/get-fable/blob/36920932251ffc619da6073eb02cb35a9a2f2dbf/skills/fable-review/references/alibaba-ocr-rulesets.md)
-- Deep guide: [references/behavioral-diff-review-playbook.md](https://github.com/imMamdouhaboammar/get-fable/blob/36920932251ffc619da6073eb02cb35a9a2f2dbf/skills/fable-review/references/behavioral-diff-review-playbook.md)
-- Existing checklist: [references/diff-review-checklist.md](https://github.com/imMamdouhaboammar/get-fable/blob/36920932251ffc619da6073eb02cb35a9a2f2dbf/skills/fable-review/references/diff-review-checklist.md)
-- Example: [examples/code-review-finding.md](https://github.com/imMamdouhaboammar/get-fable/blob/36920932251ffc619da6073eb02cb35a9a2f2dbf/skills/fable-review/examples/code-review-finding.md)
+- Alibaba OCR Rulesets & Delegation Guide: [references/alibaba-ocr-rulesets.md](references/alibaba-ocr-rulesets.md)
+- Deep guide: [references/behavioral-diff-review-playbook.md](references/behavioral-diff-review-playbook.md)
+- Existing checklist: [references/diff-review-checklist.md](references/diff-review-checklist.md)
+- Example: [examples/code-review-finding.md](examples/code-review-finding.md)
 
 
 
