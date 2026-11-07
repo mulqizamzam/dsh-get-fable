@@ -155,13 +155,9 @@ A core testing run is complete when:
 
 ---
 
-## Progressive Resources
+## Resource availability
 
-- `references/test-pyramid-and-tiers.md`: Detailed breakdown of all 7 tiers.
-- `references/anti-slop-and-diff-guard.md`: Anti-slop AST scanning specifications.
-- `references/neural-test-and-differential-oracles.md`: Neural oracle architecture.
-- `references/e2e-and-cypress-guide.md`: Cypress browser testing setup.
-
+Supporting files from the original source are not included or do not exist at the pinned upstream revision. The complete procedure in this skill is authoritative; do not attempt to load unavailable guide or example files.
 
 ## DSH host and authorization boundary
 

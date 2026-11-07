@@ -178,10 +178,10 @@ Delegation is complete when:
 - residual failures are routed explicitly rather than hidden in worker summaries.
 
 ## Progressive Resources
-- Deep guide: `references/parallelism-and-integration.md`
-- Existing contract guide: `references/subagent-contracts.md`
-- Template: `templates/delegation-contract.template.md`
-- Example: `examples/parallel-workers-walkthrough.md`
+- Deep guide: [references/parallelism-and-integration.md](references/parallelism-and-integration.md)
+- Existing contract guide: [references/subagent-contracts.md](references/subagent-contracts.md)
+- Template: [templates/delegation-contract.template.md](templates/delegation-contract.template.md)
+- Example: [examples/parallel-workers-walkthrough.md](examples/parallel-workers-walkthrough.md)
 
 
 ## DSH host and authorization boundary

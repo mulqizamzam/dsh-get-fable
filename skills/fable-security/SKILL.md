@@ -173,10 +173,10 @@ Security work completes when:
 - verdict states exactly what security property was checked and what remains not checked.
 
 ## Progressive Resources
-- Deep guide: `references/trust-boundary-and-finding-validation.md`
-- Existing threat matrix: `references/threat-modeling-matrix.md`
-- Secret hygiene: `references/secret-sanitization.md`
-- Example: `examples/security-audit-walkthrough.md`
+- Deep guide: [references/trust-boundary-and-finding-validation.md](references/trust-boundary-and-finding-validation.md)
+- Existing threat matrix: [references/threat-modeling-matrix.md](references/threat-modeling-matrix.md)
+- Secret hygiene: [references/secret-sanitization.md](references/secret-sanitization.md)
+- Example: [examples/security-audit-walkthrough.md](examples/security-audit-walkthrough.md)
 
 
 ## DSH host and authorization boundary

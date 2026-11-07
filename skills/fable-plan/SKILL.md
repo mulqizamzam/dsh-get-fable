@@ -165,10 +165,10 @@ Planning is complete when:
 - parallel work, if proposed, has explicit semantic ownership and integration proof.
 
 ## Progressive Resources
-- Deep decomposition guide: `references/risk-and-dependency-decomposition.md`
-- Existing decomposition rules: `references/decomposition-rules.md`
-- Template: `templates/work-card.template.md`
-- Example: `examples/multi-file-migration-plan.md`
+- Deep decomposition guide: [references/risk-and-dependency-decomposition.md](references/risk-and-dependency-decomposition.md)
+- Existing decomposition rules: [references/decomposition-rules.md](references/decomposition-rules.md)
+- Template: [templates/work-card.template.md](templates/work-card.template.md)
+- Example: [examples/multi-file-migration-plan.md](examples/multi-file-migration-plan.md)
 
 
 ## DSH host and authorization boundary

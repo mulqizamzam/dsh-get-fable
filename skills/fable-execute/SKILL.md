@@ -177,9 +177,9 @@ Execution completes when:
 - the verification specialist has a precise map of what changed and what remains to falsify.
 
 ## Progressive Resources
-- Deep containment guide: `references/bounded-mutation-and-failure-classification.md`
-- Existing containment reference: `references/mutation-containment.md`
-- Example: `examples/bounded-card-execution.md`
+- Deep containment guide: [references/bounded-mutation-and-failure-classification.md](references/bounded-mutation-and-failure-classification.md)
+- Existing containment reference: [references/mutation-containment.md](references/mutation-containment.md)
+- Example: [examples/bounded-card-execution.md](examples/bounded-card-execution.md)
 
 
 ## DSH host and authorization boundary

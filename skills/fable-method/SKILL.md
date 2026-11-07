@@ -27,7 +27,7 @@ Provide a universal, disciplined engineering loop across all problem shapes: cla
 ## Inputs
 
 - `task_description`: The problem prompt, specification, or bug report.
-- `domain_adapter`: Optional sector adapter (`references/domains/*`) for non-code domains.
+- `domain_adapter`: Optional sector adapter ([references/domains/*](references/domains/)) for non-code domains.
 
 ## Expected Outputs
 
@@ -59,7 +59,7 @@ Provide a universal, disciplined engineering loop across all problem shapes: cla
 
 - Execute shell commands to run compilers, linters, and test runners.
 - Use targeted file reading and editing tools.
-- Consult domain adapters in `references/domains/` when handling non-coding tasks (marketing, ops, finance, devops).
+- Consult domain adapters in [references/domains/](references/domains/) when handling non-coding tasks (marketing, ops, finance, devops).
 
 ## Evidence Requirements
 

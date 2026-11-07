@@ -1,7 +1,15 @@
 dsh-get-fable is a community port derived from get-fable.
 
 Upstream project: https://github.com/imMamdouhaboammar/get-fable
+Upstream source commit: 36920932251ffc619da6073eb02cb35a9a2f2dbf
 Upstream author credited in package metadata: Mamdouh Abo Ammar
-License: GNU Affero General Public License v3.0 or later (AGPL-3.0-or-later)
+
+Main get-fable material and the 125 vendored supporting resources are distributed under the GNU Affero General Public License v3.0 or later (AGPL-3.0-or-later). The upstream source license text is preserved at LICENSES/GET-FABLE-AGPL-3.0-or-later.txt.
+
+Separately licensed upstream material retains its own notices:
+- Fable Wise: MIT License, Copyright (c) 2026 LilMGenius; its upstream NOTICE is preserved in LICENSES/FABLE-WISE-NOTICE.txt, including attribution for third-party Matt Pocock skills.
+- Fable Council: MIT License, Copyright (c) 2026 Kitze.
+
+The corresponding license texts are preserved under LICENSES/. These notices do not imply that separately licensed material has been relicensed under AGPL.
 
 This repository is not an official DeepSeek product and does not imply endorsement by DeepSeek. The port does not claim to reproduce upstream runtime services that are not included in this repository.

@@ -134,13 +134,13 @@ Multiple business domains accessing the same database schema directly. Resolutio
 
 ## Progressive Resources
 
-- Vector scoring guide: `references/vector-scoring.md`
-- Tech stack matrix: `references/tech-stack-matrix.md`
-- Communication standards: `references/communication-standards.md`
-- Subagent role distribution: `references/subagent-role-distribution.md`
-- Example walkthroughs: `examples/fintech-scale-walkthrough.md`, `examples/ai-media-pipeline-walkthrough.md`
-- Templates: `templates/microservices-manifest.toon`, `templates/docker-compose.microservices.yml`, `templates/service-contract.proto`
-- Validation script: `scripts/evaluate-architecture.py`
+- Vector scoring guide: [references/vector-scoring.md](references/vector-scoring.md)
+- Tech stack matrix: [references/tech-stack-matrix.md](references/tech-stack-matrix.md)
+- Communication standards: [references/communication-standards.md](references/communication-standards.md)
+- Subagent role distribution: [references/subagent-role-distribution.md](references/subagent-role-distribution.md)
+- Example walkthroughs: [examples/fintech-scale-walkthrough.md](examples/fintech-scale-walkthrough.md), [examples/ai-media-pipeline-walkthrough.md](examples/ai-media-pipeline-walkthrough.md)
+- Templates: [templates/microservices-manifest.toon](templates/microservices-manifest.toon), [templates/docker-compose.microservices.yml](templates/docker-compose.microservices.yml), [templates/service-contract.proto](templates/service-contract.proto)
+- Validation script: [scripts/evaluate-architecture.py](scripts/evaluate-architecture.py)
 
 
 ## DSH host and authorization boundary

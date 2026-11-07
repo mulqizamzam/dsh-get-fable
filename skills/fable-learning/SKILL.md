@@ -356,15 +356,15 @@ Execution of `fable-learning` completes when:
 
 ## Progressive Resources
 
-- Failure lessons knowledge base protocol: `references/failure-lessons.md`
-- Deep extraction schema & taxonomy: `references/analysis.md`
-- Multi-target storage rules & synthesis formats: `references/synthesis.md`
-- Empirical confidence & rule drift: `references/confidence-and-drift.md`
-- Compound solution architecture & vocabulary: `references/solution-architecture.md`
-- Post-training signal taxonomy: `references/post-training-signals.md`
-- Session source adapters: `references/session-sources.md`
-- Skill package compilation: `references/skill-compilation.md`
-- Walkthrough example: `examples/learning-walkthrough.md`
+- Failure lessons knowledge base protocol: [references/failure-lessons.md](references/failure-lessons.md)
+- Deep extraction schema & taxonomy: [references/analysis.md](references/analysis.md)
+- Multi-target storage rules & synthesis formats: [references/synthesis.md](references/synthesis.md)
+- Empirical confidence & rule drift: [references/confidence-and-drift.md](references/confidence-and-drift.md)
+- Compound solution architecture & vocabulary: [references/solution-architecture.md](references/solution-architecture.md)
+- Post-training signal taxonomy: [references/post-training-signals.md](references/post-training-signals.md)
+- Session source adapters: [references/session-sources.md](references/session-sources.md)
+- Skill package compilation: [references/skill-compilation.md](references/skill-compilation.md)
+- Walkthrough example: [examples/learning-walkthrough.md](examples/learning-walkthrough.md)
 
 
 ## DSH host and authorization boundary

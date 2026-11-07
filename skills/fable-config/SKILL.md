@@ -156,9 +156,9 @@ Configuration completes when:
 - rollback and host limitations are explicit.
 
 ## Progressive Resources
-- Deep guide: `references/config-precedence-permissions-and-hooks.md`
-- Existing rules: `references/harness-configuration-rules.md`
-- Example: `examples/configure-allowlist.md`
+- Deep guide: [references/config-precedence-permissions-and-hooks.md](references/config-precedence-permissions-and-hooks.md)
+- Existing rules: [references/harness-configuration-rules.md](references/harness-configuration-rules.md)
+- Example: [examples/configure-allowlist.md](examples/configure-allowlist.md)
 
 
 ## DSH host and authorization boundary

@@ -191,7 +191,7 @@ Completion requires:
 - any prior behavioral proof invalidated by corpus changes is explicitly marked stale until rerun.
 
 ## Progressive Resources
-- Depth standard: `references/depth-standard-v2.md`
+- Depth standard: the upstream depth standard is not bundled in this port; follow the skill-quality criteria stated in this document
 - Existing authoring references and templates remain useful for package mechanics.
 
 

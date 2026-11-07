@@ -174,10 +174,10 @@ Verification completes when:
 - verdict is no broader than the evidence supports.
 
 ## Progressive Resources
-- Deep matrix guide: `references/verification-matrix-and-evidence-strength.md`
-- Existing falsification heuristics: `references/falsification-heuristics.md`
-- Evidence recording: `references/evidence-recording.md`
-- Example: `examples/falsification-session.md`
+- Deep matrix guide: [references/verification-matrix-and-evidence-strength.md](references/verification-matrix-and-evidence-strength.md)
+- Existing falsification heuristics: [references/falsification-heuristics.md](references/falsification-heuristics.md)
+- Evidence recording: [references/evidence-recording.md](references/evidence-recording.md)
+- Example: [examples/falsification-session.md](examples/falsification-session.md)
 
 
 ## DSH host and authorization boundary

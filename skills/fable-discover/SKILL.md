@@ -152,9 +152,9 @@ Discovery is complete when the next specialist can explain:
 - why those remaining unknowns do or do not block the next action.
 
 ## Progressive Resources
-- Deep playbook: `references/repository-investigation-playbook.md`
-- Existing evidence protocol: `references/evidence-gathering-protocol.md`
-- Example: `examples/codebase-inspection.md`
+- Deep playbook: [references/repository-investigation-playbook.md](references/repository-investigation-playbook.md)
+- Existing evidence protocol: [references/evidence-gathering-protocol.md](references/evidence-gathering-protocol.md)
+- Example: [examples/codebase-inspection.md](examples/codebase-inspection.md)
 
 
 ## DSH host and authorization boundary

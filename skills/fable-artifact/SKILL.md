@@ -165,9 +165,9 @@ Artifact completes when:
 - a zero-context reader can understand and use the artifact.
 
 ## Progressive Resources
-- Deep guide: `references/source-grounded-artifact-design.md`
-- Existing guide: `references/artifact-composition-guide.md`
-- Example: `examples/system-architecture-diagram.md`
+- Deep guide: [references/source-grounded-artifact-design.md](references/source-grounded-artifact-design.md)
+- Existing guide: [references/artifact-composition-guide.md](references/artifact-composition-guide.md)
+- Example: [examples/system-architecture-diagram.md](examples/system-architecture-diagram.md)
 
 
 ## DSH host and authorization boundary

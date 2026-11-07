@@ -176,10 +176,10 @@ Review completes when:
 - verdict is APPROVE, CHANGES_REQUIRED, or INCOMPLETE with evidence.
 
 ## Progressive Resources
-- Alibaba OCR Rulesets & Delegation Guide: `references/alibaba-ocr-rulesets.md`
-- Deep guide: `references/behavioral-diff-review-playbook.md`
-- Existing checklist: `references/diff-review-checklist.md`
-- Example: `examples/code-review-finding.md`
+- Alibaba OCR Rulesets & Delegation Guide: [references/alibaba-ocr-rulesets.md](references/alibaba-ocr-rulesets.md)
+- Deep guide: [references/behavioral-diff-review-playbook.md](references/behavioral-diff-review-playbook.md)
+- Existing checklist: [references/diff-review-checklist.md](references/diff-review-checklist.md)
+- Example: [examples/code-review-finding.md](examples/code-review-finding.md)
 
 
 

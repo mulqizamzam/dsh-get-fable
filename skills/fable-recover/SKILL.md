@@ -172,9 +172,9 @@ Recovery completes only when:
 - execution can resume without another blind retry.
 
 ## Progressive Resources
-- Deep guide: `references/diagnostic-falsification-playbook.md`
-- Existing ladder: `references/attribution-ladder.md`
-- Example: `examples/recovering-stale-test-cache.md`
+- Deep guide: [references/diagnostic-falsification-playbook.md](references/diagnostic-falsification-playbook.md)
+- Existing ladder: [references/attribution-ladder.md](references/attribution-ladder.md)
+- Example: [examples/recovering-stale-test-cache.md](examples/recovering-stale-test-cache.md)
 
 
 ## DSH host and authorization boundary

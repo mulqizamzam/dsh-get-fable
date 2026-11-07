@@ -31,7 +31,7 @@ Generate validated, source-backed domain adapters and trap fixtures for new prof
 ## Expected Outputs
 
 1. **Domain Workflow with Flowchart**: Step-by-step approach distilled from research, plus a mermaid flowchart.
-2. **Domain Adapter**: Conforming to `references/domains/TEMPLATE.md` with cited primary sources.
+2. **Domain Adapter**: Conforming to [references/domains/TEMPLATE.md](../fable-method/references/domains/TEMPLATE.md) with cited primary sources.
 3. **Trap Fixture**: Evaluation scenario in `eval/scenarios/` with `GROUND-TRUTH.md` defining the sector's central fraud.
 4. **Smoke Eval**: Initial control-vs-adapter validation runs.
 
@@ -40,10 +40,10 @@ Generate validated, source-backed domain adapters and trap fixtures for new prof
 1. **Stage 1: Discuss**: Adaptively clarify the use case, practitioner standards, trusted authorities, and forbidden actions. Enforce Red-lines (refusal for medical/legal/financial advice) and Scope stops (refusal if domain is standard software engineering).
 2. **Stage 2: Research**: Perform bounded web research against authoritative sources. Extract regulations, platform policies, practitioner evidence standards, and documented failure modes.
 3. **Stage 3: Generate the Bundle**:
-   - Read all existing adapters in `references/domains/` and the governing template.
+   - Read all existing adapters in [references/domains/](../fable-method/references/domains/) and the governing template.
    - Define exact sector scope boundaries.
    - Author the ordered workflow and mermaid flowchart.
-   - Write the adapter according to `references/domains/TEMPLATE.md`.
+   - Write the adapter according to [references/domains/TEMPLATE.md](../fable-method/references/domains/TEMPLATE.md).
    - Wire all routing surfaces (registry, catalog, docs).
    - Build the trap fixture with objective violation markers.
 4. **Stage 4: Verify & Smoke-Eval**:

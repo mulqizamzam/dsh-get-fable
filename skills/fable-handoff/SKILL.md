@@ -155,10 +155,10 @@ A handoff is complete when a zero-context receiving agent can:
 - execute the next action without asking for missing basic context.
 
 ## Progressive Resources
-- Deep guide: `references/resumability-and-context-compaction.md`
-- Existing schema: `references/continuity-schema.md`
-- Template: `templates/handoff-state.template.md`
-- Example: `examples/cross-session-handoff.md`
+- Deep guide: [references/resumability-and-context-compaction.md](references/resumability-and-context-compaction.md)
+- Existing schema: [references/continuity-schema.md](references/continuity-schema.md)
+- Template: [templates/handoff-state.template.md](templates/handoff-state.template.md)
+- Example: [examples/cross-session-handoff.md](examples/cross-session-handoff.md)
 
 
 ## DSH host and authorization boundary

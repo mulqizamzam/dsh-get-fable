@@ -42,10 +42,23 @@ function readSkillMetadata(source, filePath) {
     rawDescription = block.join(' ')
   }
   const description = parseQuotedScalar(rawDescription)
+  const readBoolean = (key, fallback) => {
+    const line = lines.find(item => item.startsWith(key + ':'))
+    if (!line) return fallback
+    const raw = line.slice(key.length + 1).trim()
+    if (raw !== 'true' && raw !== 'false') {
+      throw new Error('Invalid boolean frontmatter field ' + key + ' in ' + filePath)
+    }
+    return raw === 'true'
+  }
+  const invocation = {
+    modelInvocable: !readBoolean('disable-model-invocation', false),
+    userInvocable: readBoolean('user-invocable', true),
+  }
   if (!skillNamePattern.test(skillName) || !description) {
     throw new Error('Invalid skill name or empty description in ' + filePath)
   }
-  return { name: skillName, description, frontmatter: match[0] }
+  return { name: skillName, description, invocation, frontmatter: match[0] }
 }
 
 function throwIfAborted(signal) {
@@ -97,11 +110,11 @@ export function apply(ctx) {
           name: skill.name,
           description: skill.description,
           whenToUse: skill.description,
+          invocation: skill.invocation,
           rank: 600,
           locator: skill.slug,
           source: 'bundled',
           provider: providerName,
-          invocation: { modelInvocable: true, userInvocable: true },
           resourceBase,
         }))
       },
@@ -109,7 +122,13 @@ export function apply(ctx) {
         throwIfAborted(options.signal)
         if (typeof candidate?.locator !== 'string' || !skillNamePattern.test(candidate.locator)) return undefined
         const filePath = join(skillsRoot, candidate.locator, 'SKILL.md')
-        const source = await readFile(filePath, 'utf8')
+        let source
+        try {
+          source = await readFile(filePath, 'utf8')
+        } catch (error) {
+          if (error && typeof error === 'object' && 'code' in error && error.code === 'ENOENT') return undefined
+          throw error
+        }
         throwIfAborted(options.signal)
         const metadata = readSkillMetadata(source, filePath)
         if (metadata.name !== candidate.locator) return undefined
@@ -117,10 +136,10 @@ export function apply(ctx) {
           name: metadata.name,
           description: metadata.description,
           whenToUse: metadata.description,
+          invocation: metadata.invocation,
           content: source.slice(metadata.frontmatter.length).trimStart(),
           source: 'bundled',
           provider: providerName,
-          invocation: { modelInvocable: true, userInvocable: true },
           resourceBase,
         }
       },

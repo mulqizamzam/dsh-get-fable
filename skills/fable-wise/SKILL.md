@@ -70,6 +70,17 @@ Enforce senior architectural wisdom through cognitive reflexes across Depth, Bre
 - Prioritize removal over addition: removing bloat, removing drift, removing unproven assumptions.
 - An artifact is finished not when nothing more can be added, but when nothing more can be removed without losing required behavior.
 
+## Installed DSH specialist skills
+
+The original nested specialists are flattened into 28 top-level directories so the DSH provider's one-directory discovery can load them by exact skill name.
+
+- **Breadth:** `re0-upgrade`, `ssotize`
+- **Coil:** `catchup`, `nba`, `re0-loop`, `re0-memo`, `re0-plan`, `re0-work`
+- **Depth:** `aim`, `autobahn`, `debloat`, `dedash`, `detool`, `factchk`, `feynman`, `hate`, `macrothink`, `mandela`, `modelchk`, `re0-git`, `re0-merge`, `re0-release`, `re0`, `readchk`, `reorder`, `shower`, `sip`
+- **Mesh:** `prism`
+
+Load the exact named specialist when its procedure owns the task. Twelve skills retain upstream `disable-model-invocation: true` and are therefore user-invoked only in DSH: `re0-upgrade`, `re0-plan`, `debloat`, `dedash`, `feynman`, `hate`, `macrothink`, `re0-git`, `re0-merge`, `re0-release`, `reorder`, and `prism`. Do not attempt to load these through model-side skill invocation; ask the user to invoke them explicitly when needed.
+
 ## Tool Policy
 
 - Use standard file viewing and editing tools to consolidate duplicated code and configs.

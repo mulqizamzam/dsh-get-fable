@@ -1,99 +1,74 @@
 ---
 name: fable-redteam
-description: 'Execute native agentic ethical penetration testing and automated security audits against staging or authorized application targets. Discovers API logic flaws, BOLA/IDOR vulnerabilities, missing authentication, sensitive file exposures, and security misconfigurations within bounded scope. Produces verified security findings with reproduction PoCs and automatic Fable remediation work cards.'
+description: "Perform a read-only, source-grounded security review and threat assessment of an authorized repository. Use when examining trust boundaries, authentication and authorization logic, input handling, sensitive data flows, security controls, or a candidate vulnerability. This bundled skill provides review instructions only; it does not include a scanner, active HTTP probe engine, or automated SARIF/report generator."
 ---
 
-# Fable RedTeam
+# Fable RedTeam — guidance-only security review
 
-Execute safe, bounded, agentic ethical penetration testing and active vulnerability discovery.
+## Capability boundary
 
-## Purpose
-Provide an automated, reproducible offensive security audit engine to prove whether application defenses withstand real-world attack vectors. `fable-redteam` verifies API authentication, authorization boundaries, object isolation, and sensitive exposures in authorized staging/local environments, producing immediate remediation cards for implementation.
+This bundled skill is a **read-only security-review procedure**. It can guide repository inspection, threat modeling, source tracing, and review of existing test evidence. It does not ship or activate the upstream red-team runtime, HTTP probe engine, Cloudflare adapter, fuzzers, CVSS calculator, report schema, run attestation, or remediation automation.
 
-## When to Use
-- Active security testing is needed for local, staging, or authorized test targets.
-- Verifying whether API endpoints enforce authentication and authorization (BOLA/IDOR).
-- Testing for CORS misconfigurations, missing security headers, or leaked `.env` files.
-- Simulating attacker-controlled requests against staging endpoints before release.
-- Validating whether a previously applied security patch truly eliminates the vulnerability.
+Do not describe this skill as an active penetration-testing engine. Do not claim that a target has been scanned, that an endpoint was probed, or that a vulnerability was experimentally confirmed unless a separately available and authorized tool actually performed that operation and returned evidence.
 
-## When NOT to Use
-- Pure static code review or threat modeling without live target endpoints (use `fable-security`).
-- Functional test runs or assertion checking without security probing (use `fable-verify`).
-- Unauthorized public targets outside the explicitly configured scope.
-- Stress testing or denial-of-service simulations (strictly out of scope).
+## When to use
 
-## Inputs
-- `target`: Target HTTP/HTTPS URL or local repository path.
-- `profile`: Scan depth (`passive`, `api-logic`, `comprehensive`, `orchestrated`, `playbook`, `audit`).
-- `scopeConfig`: Optional custom scope JSON (defaults to `.fable/redteam.json` or local safe defaults). Supports `allowedCidrs`, `maintenanceWindow`, and automatic cloud metadata protection (`169.254.169.254`).
-- `authToken`: Optional Bearer token for authenticated API probes.
-- `baseline`: Optional path to prior `.fable/redteam-findings.json` for regression diffing.
-- `failOnCvss`: Optional numeric CVSS v3.1 threshold (e.g. 7.0) to exit with status code 1 on CI/CD security violations.
-- `suppress`: Optional list of finding fingerprints or IDs to ignore.
+- Reviewing source code for authorization, authentication, tenant-isolation, input-validation, injection, SSRF, data-exposure, or unsafe deserialization risks.
+- Mapping trust boundaries, privileged operations, sensitive data flows, and external entry points.
+- Reviewing an existing security test, scanner result, patch, or candidate finding.
+- Preparing a safe, bounded test plan for an explicitly authorized environment.
 
-## Operating Modes
-- **Guidance Mode:** For targeted security queries, threat modeling, architecture review, or verifying a specific candidate finding. Does not write comprehensive audit artifacts or run all phases.
-- **Full Audit Mode:** Complete 6-phase audit workflow across all attack surfaces, writing deterministic coverage ledgers and verified findings schemas. Triggered via `get-fable redteam audit` or `--profile audit`.
+## When not to use
 
-## Expected Outputs
-- `redteam_findings`: Array of validated vulnerability findings with CWE IDs, automated CVSS v3.1 vectors, numeric base scores, compliance taxonomy tags, and reproduction curl commands.
-- `docs/security/REDTEAM_REPORT.md`: Comprehensive Markdown audit report with executive risk scorecard (A-F), MTTR estimate, and finding breakdowns.
-- `docs/security/REDTEAM_REPORT.sarif`: OASIS SARIF v2.1.0 report for GitHub Advanced Security and enterprise SIEM/SOAR ingestion.
-- `findings.json`: Machine-readable structured findings adhering strictly to `report-schema.json`, categorized by verdict (`confirmed`, `needs_validation`, `rejected`).
-- `coverage-ledger.json`: Deterministic coverage ledger mapping checked surfaces and canonical RFC 3986 percent-encoded coverage IDs.
-- `architecture.md`: Source-grounded threat boundary and component architecture map.
-- `FINDINGS-DETAIL.md`: Detailed source traces, reproductions, and minimal effective code fixes.
-- `NEEDS-VALIDATION.md`: Source-grounded leads requiring unobserved deployment facts with safe validation plans.
-- `.fable/run-attestation.json`: Cryptographic SHA-256 tamper-evident attestation record.
-- `remediation_cards`: Actionable Fable work cards ready for `.fable/LEDGER.md`.
+- Active network probing, exploitation, fuzzing, credential testing, or endpoint scanning. This bundle does not provide those capabilities.
+- Stress testing, denial-of-service testing, stealth, persistence, or evasion.
+- Testing a public or third-party target without explicit authorization and a dedicated approved test capability.
+- Treating a missing test or unavailable runtime as evidence that a vulnerability is absent.
+
+## Required inputs
+
+- Repository or source scope to inspect.
+- Security question or asset under review.
+- Relevant authorization and operational constraints.
+- Existing test/scanner evidence, when the task is a result review.
+
+If the scope or authorization is unclear, stay read-only and ask for the minimum missing constraint before any test plan that could create side effects.
 
 ## Procedure
-1. **Scope Preflight:** Verify the target URL against allowed host patterns, CIDR subnets, and excluded paths. Enforce cloud metadata guard (`169.254.169.254`) and active maintenance windows. Fail closed immediately if target is out of scope.
-2. **Phase 1 — Reconnaissance & Threat Modeling:** Map architecture, lower-trust principals, authorization boundaries, entry surfaces, and execution sinks into `architecture.md` and seed `coverage-ledger.json`.
-3. **Phase 2 — Coverage-Led Hunting:** Iterate ledger units across attack classes (Auth, IDOR, Injection, SSRF, Memory Safety, LLM, Supply Chain) with isolated hunter checks.
-4. **Phase 3 — Adversarial Candidate Validation:** Subject every candidate to an independent verifier trying to disprove it. Classify findings strictly into:
-   - `confirmed`: Complete source trace and demonstrated bounded observed result.
-   - `needs_validation`: Source-grounded lead blocked by an unobserved deployment fact, with safe local and deployment plans.
-   - `rejected`: Disproved candidate with explicit refutation rationale.
-5. **Phase 4 — Structured Output & Schema Validation:** Write `findings.json` sorted by fingerprint and validate against `report-schema.json` using zero-dependency validator `validateFindings()`. Validate coverage ledger via `validateCoverageLedger()`.
-6. **Phase 5 — Independent Record Verification:** Verify final source claims, file line citations, and stable fingerprints without mixing evidence.
-7. **Phase 6 — Target-Neutral Reporting & Remediation:** Generate `REPORT.md`, `FINDINGS-DETAIL.md`, and `NEEDS-VALIDATION.md`. Convert validated findings into actionable remediation work cards for `.fable/LEDGER.md` and automated regression tests.
 
-## Decision Rules
-- If a target host does not match `allowedHosts`, `allowedCidrs`, or loopback defaults, refuse execution immediately without network calls.
-- If target resolves to cloud instance metadata (`169.254.169.254`), abort immediately.
-- If `safe-mode` is active, never execute database-dropping SQL payloads or unbounded fuzz loops.
-- If circuit breaker trips to OPEN state, abort probe operations gracefully and report partial findings.
-- If `--fail-on-cvss` is set and any unsuppressed finding meets or exceeds the threshold, exit with non-zero failure status for CI/CD gates.
-- When all findings are resolved, transition to `fable-verify` or `fable-release`.
+1. **Scope:** Identify the repository, commit, included paths, excluded paths, relevant environment assumptions, and the user's authorization. Do not access external targets as part of this skill.
+2. **Map:** Identify assets, actors, trust boundaries, entry points, data flows, privilege transitions, and sensitive sinks from repository evidence.
+3. **Trace:** Follow untrusted input to security-sensitive operations. Inspect authentication, authorization, tenant/object ownership checks, canonicalization, validation, error handling, logging, and secret handling where relevant.
+4. **Challenge:** Form a small set of falsifiable vulnerability hypotheses. For each, state the source path and data/control-flow condition that would make it exploitable.
+5. **Check evidence:** Inspect existing tests and available local fixtures. Run only read-only or already-authorized local checks exposed by the environment. Do not invent a test result.
+6. **Classify:**
+   - **Source-confirmed defect:** the source path demonstrates a violated security invariant; state whether runtime exploitability remains untested.
+   - **Needs validation:** a plausible source-grounded path depends on runtime, configuration, or deployment facts not available here.
+   - **Refuted:** a concrete guard or test evidence defeats the stated hypothesis; describe its scope.
+7. **Recommend:** Propose the smallest mitigation and a focused regression test. Do not modify files or create remediation cards unless the user separately authorizes implementation.
+8. **Handoff:** If active testing is required, identify the exact missing capability and the safe, authorized test conditions needed. Do not silently substitute an unapproved network probe.
 
-## Tool Policy
-- Use native TS HTTP probe (`src/core/redteam/probe.ts`) for zero-dependency execution across any host.
-- Use native Cloudflare Audit Adapter (`src/core/redteam/adapters/cloudflare.ts`) and Audit Engine (`src/core/redteam/audit/engine.ts`) for 6-phase coverage-led audits and `report-schema.json` compliance.
-- Reference the 14 specialized attack-class domain guides in `skills/fable-redteam/references/cloudflare/` (`AI-AND-LLM.md`, `WEB-PROTOCOL-AND-AUTH.md`, `CLIENT-SIDE.md`, etc.).
-- Optional external tools (Nuclei, Nmap, FFuf, Akto, HexStrike, CyberStrike, PentAGI, PentestAgent) may be orchestrated via adapters when available.
-- Never write credentials or sensitive data into git-tracked files or public logs.
+## Output: Security Review Packet
 
-## Evidence Requirements
-- Findings must include the exact target URL, HTTP status code, CVSS v3.1 vector/score, compliance tags, and reproducible `curl` commands.
-- Repaired vulnerabilities require a negative re-scan proving the attack vector now returns 401/403/404.
-- Cryptographic run attestation verifies findings integrity.
+Return the following:
 
-## Failure Handling
-- On network connection errors or target timeouts, record the failure as an unresolved endpoint rather than a false negative.
-- If rate limits are encountered, throttle request frequency or pause execution with backoff.
-- On repeated target server errors, trigger the circuit breaker to prevent cascading denial-of-service.
+- **Scope and revision:** exact repository/commit and reviewed paths.
+- **Assets and trust boundaries:** relevant actors, entry points, data flows, and sensitive sinks.
+- **Findings:** each with status, severity rationale, confidence, exact path/line, invariant violated, source trace, and conditions still unverified.
+- **Existing evidence:** tests or tool outputs actually inspected, with their scope and limitations.
+- **Recommended mitigation:** smallest corrective change and regression-test objective.
+- **Unresolved validation:** exact runtime or deployment fact required next.
 
-## Completion Criteria
-- Complete execution of the selected scan or audit profile.
-- Generated Markdown report at `docs/security/REDTEAM_REPORT.md` and SARIF at `docs/security/REDTEAM_REPORT.sarif`.
-- When in audit mode, generated `findings.json`, `coverage-ledger.json`, and `architecture.md` passing schema validation.
-- Generated run attestation at `.fable/run-attestation.json`.
-- Remediation work cards formatted for `.fable/LEDGER.md`.
+Use qualitative severity unless the evidence supports a defensible scoring method. Do not fabricate CVSS vectors, HTTP status codes, curl reproductions, SARIF, cryptographic attestations, or coverage ledgers.
 
+## Safety and authorization
 
+- Review only repositories and assets that the user owns or is authorized to assess.
+- Never request, store, or print secrets, bearer tokens, private keys, or sensitive production data.
+- Do not conduct active testing against a remote system from this workflow.
+- Keep all proposed probes bounded, non-destructive, and explicitly authorized.
+- A source-level finding is not automatically proof of live exploitability; distinguish code evidence from runtime evidence.
 
 ## DSH host and authorization boundary
 
-Use only capabilities the active DSH profile actually exposes. Inspect repository instructions and relevant files before mutation. Obtain explicit authorization before destructive changes, release or publication actions, remote side effects, or testing systems outside the approved scope. Run security and red-team workflows only against systems you own or are expressly authorized to test. Never claim a command, test, or verification ran without execution evidence; rerun relevant proof after the last mutation. Do not expose secrets or hidden reasoning.
+Use only capabilities the active DSH profile actually exposes. This package supplies instructions, not a security scanner or network-testing service. Inspect repository guidance before mutation; obtain separate explicit authorization before destructive changes, publication, remote side effects, or active security testing. Never claim a command or test ran without fresh execution evidence. Do not expose secrets or hidden reasoning.

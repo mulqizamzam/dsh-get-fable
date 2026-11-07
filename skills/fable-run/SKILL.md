@@ -168,9 +168,9 @@ Runtime execution completes when:
 - evidence is handed to verification without overclaiming.
 
 ## Progressive Resources
-- Deep guide: `references/process-lifecycle-and-readiness.md`
-- Existing protocol: `references/runtime-process-management.md`
-- Example: `examples/live-server-smoke-check.md`
+- Deep guide: [references/process-lifecycle-and-readiness.md](references/process-lifecycle-and-readiness.md)
+- Existing protocol: [references/runtime-process-management.md](references/runtime-process-management.md)
+- Example: [examples/live-server-smoke-check.md](examples/live-server-smoke-check.md)
 
 
 ## DSH host and authorization boundary

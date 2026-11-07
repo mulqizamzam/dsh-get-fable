@@ -67,7 +67,35 @@
         "fable-wise",
         "fable-test",
         "fable-core-test",
-        "fable-bug-hunt"
+        "fable-bug-hunt",
+        "re0-upgrade",
+        "ssotize",
+        "catchup",
+        "nba",
+        "re0-loop",
+        "re0-memo",
+        "re0-plan",
+        "re0-work",
+        "aim",
+        "autobahn",
+        "debloat",
+        "dedash",
+        "detool",
+        "factchk",
+        "feynman",
+        "hate",
+        "macrothink",
+        "mandela",
+        "modelchk",
+        "re0-git",
+        "re0-merge",
+        "re0-release",
+        "re0",
+        "readchk",
+        "reorder",
+        "shower",
+        "sip",
+        "prism"
       ],
       "keywords": [
         "fable",
@@ -1985,7 +2013,35 @@
       "parallelSafe": true,
       "next": [
         "fable-plan",
-        "fable-execute"
+        "fable-execute",
+        "re0-upgrade",
+        "ssotize",
+        "catchup",
+        "nba",
+        "re0-loop",
+        "re0-memo",
+        "re0-plan",
+        "re0-work",
+        "aim",
+        "autobahn",
+        "debloat",
+        "dedash",
+        "detool",
+        "factchk",
+        "feynman",
+        "hate",
+        "macrothink",
+        "mandela",
+        "modelchk",
+        "re0-git",
+        "re0-merge",
+        "re0-release",
+        "re0",
+        "readchk",
+        "reorder",
+        "shower",
+        "sip",
+        "prism"
       ],
       "keywords": [
         "fable-wise",
@@ -1995,6 +2051,790 @@
         "autobahn",
         "feynman check",
         "strip slop"
+      ],
+      "audience": "consumer"
+    },
+    {
+      "id": "re0-upgrade",
+      "order": 500,
+      "phase": "planned",
+      "pack": "system",
+      "description": "Bring the installed skill catalog up to date through a reviewed and confirmed synchronization.",
+      "intents": [
+        "re0-upgrade",
+        "apply-re0-upgrade"
+      ],
+      "requires": [],
+      "produces": [
+        "re0-upgrade-result"
+      ],
+      "gates": [
+        "authorization-before-mutation"
+      ],
+      "fallback": "fable-wise",
+      "mutatesWorkspace": true,
+      "parallelSafe": false,
+      "next": [],
+      "keywords": [
+        "re0-upgrade",
+        "fable-wise",
+        "breadth"
+      ],
+      "audience": "consumer"
+    },
+    {
+      "id": "ssotize",
+      "order": 501,
+      "phase": "planned",
+      "pack": "system",
+      "description": "Find duplicated facts, propose one canonical source, then consolidate only after approval.",
+      "intents": [
+        "ssotize",
+        "apply-ssotize"
+      ],
+      "requires": [],
+      "produces": [
+        "ssotize-result"
+      ],
+      "gates": [
+        "authorization-before-mutation"
+      ],
+      "fallback": "fable-wise",
+      "mutatesWorkspace": true,
+      "parallelSafe": false,
+      "next": [],
+      "keywords": [
+        "ssotize",
+        "fable-wise",
+        "breadth"
+      ],
+      "audience": "consumer"
+    },
+    {
+      "id": "catchup",
+      "order": 502,
+      "phase": "planned",
+      "pack": "system",
+      "description": "Rebuild project context for a returning user from current project evidence.",
+      "intents": [
+        "catchup",
+        "apply-catchup"
+      ],
+      "requires": [],
+      "produces": [
+        "catchup-result"
+      ],
+      "gates": [
+        "evidence-backed-output"
+      ],
+      "fallback": "fable-wise",
+      "mutatesWorkspace": false,
+      "parallelSafe": true,
+      "next": [],
+      "keywords": [
+        "catchup",
+        "fable-wise",
+        "coil"
+      ],
+      "audience": "consumer"
+    },
+    {
+      "id": "nba",
+      "order": 503,
+      "phase": "planned",
+      "pack": "system",
+      "description": "Choose the single highest-leverage next action from the current work-cycle state.",
+      "intents": [
+        "nba",
+        "apply-nba"
+      ],
+      "requires": [],
+      "produces": [
+        "nba-result"
+      ],
+      "gates": [
+        "evidence-backed-output"
+      ],
+      "fallback": "fable-wise",
+      "mutatesWorkspace": false,
+      "parallelSafe": true,
+      "next": [],
+      "keywords": [
+        "nba",
+        "fable-wise",
+        "coil"
+      ],
+      "audience": "consumer"
+    },
+    {
+      "id": "re0-loop",
+      "order": 504,
+      "phase": "planned",
+      "pack": "system",
+      "description": "Run iterative build, QA, learning, and restart cycles with quality gates.",
+      "intents": [
+        "re0-loop",
+        "apply-re0-loop"
+      ],
+      "requires": [],
+      "produces": [
+        "re0-loop-result"
+      ],
+      "gates": [
+        "authorization-before-mutation"
+      ],
+      "fallback": "fable-wise",
+      "mutatesWorkspace": true,
+      "parallelSafe": false,
+      "next": [],
+      "keywords": [
+        "re0-loop",
+        "fable-wise",
+        "coil"
+      ],
+      "audience": "consumer"
+    },
+    {
+      "id": "re0-memo",
+      "order": 505,
+      "phase": "planned",
+      "pack": "system",
+      "description": "Turn a work cycle into portable lessons, anti-patterns, and next-cycle quality gates.",
+      "intents": [
+        "re0-memo",
+        "apply-re0-memo"
+      ],
+      "requires": [],
+      "produces": [
+        "re0-memo-result"
+      ],
+      "gates": [
+        "authorization-before-mutation"
+      ],
+      "fallback": "fable-wise",
+      "mutatesWorkspace": true,
+      "parallelSafe": false,
+      "next": [],
+      "keywords": [
+        "re0-memo",
+        "fable-wise",
+        "coil"
+      ],
+      "audience": "consumer"
+    },
+    {
+      "id": "re0-plan",
+      "order": 506,
+      "phase": "planned",
+      "pack": "system",
+      "description": "Open and seed a new iteration casebook before starting a build cycle.",
+      "intents": [
+        "re0-plan",
+        "apply-re0-plan"
+      ],
+      "requires": [],
+      "produces": [
+        "re0-plan-result"
+      ],
+      "gates": [
+        "authorization-before-mutation"
+      ],
+      "fallback": "fable-wise",
+      "mutatesWorkspace": true,
+      "parallelSafe": false,
+      "next": [],
+      "keywords": [
+        "re0-plan",
+        "fable-wise",
+        "coil"
+      ],
+      "audience": "consumer"
+    },
+    {
+      "id": "re0-work",
+      "order": 507,
+      "phase": "planned",
+      "pack": "system",
+      "description": "Restart a project or artifact from v0 while preserving proven lessons and contracts.",
+      "intents": [
+        "re0-work",
+        "apply-re0-work"
+      ],
+      "requires": [],
+      "produces": [
+        "re0-work-result"
+      ],
+      "gates": [
+        "authorization-before-mutation"
+      ],
+      "fallback": "fable-wise",
+      "mutatesWorkspace": true,
+      "parallelSafe": false,
+      "next": [],
+      "keywords": [
+        "re0-work",
+        "fable-wise",
+        "coil"
+      ],
+      "audience": "consumer"
+    },
+    {
+      "id": "aim",
+      "order": 508,
+      "phase": "planned",
+      "pack": "system",
+      "description": "Infer a likely intent from supplied material and propose it for user confirmation.",
+      "intents": [
+        "aim",
+        "apply-aim"
+      ],
+      "requires": [],
+      "produces": [
+        "aim-result"
+      ],
+      "gates": [
+        "evidence-backed-output"
+      ],
+      "fallback": "fable-wise",
+      "mutatesWorkspace": false,
+      "parallelSafe": true,
+      "next": [],
+      "keywords": [
+        "aim",
+        "fable-wise",
+        "depth"
+      ],
+      "audience": "consumer"
+    },
+    {
+      "id": "autobahn",
+      "order": 509,
+      "phase": "planned",
+      "pack": "system",
+      "description": "Carve risk-adjacent scope and proceed only with the explicitly approved safe remainder.",
+      "intents": [
+        "autobahn",
+        "apply-autobahn"
+      ],
+      "requires": [],
+      "produces": [
+        "autobahn-result"
+      ],
+      "gates": [
+        "authorization-before-mutation"
+      ],
+      "fallback": "fable-wise",
+      "mutatesWorkspace": true,
+      "parallelSafe": false,
+      "next": [],
+      "keywords": [
+        "autobahn",
+        "fable-wise",
+        "depth"
+      ],
+      "audience": "consumer"
+    },
+    {
+      "id": "debloat",
+      "order": 510,
+      "phase": "planned",
+      "pack": "system",
+      "description": "Compress verbose prose while preserving its load-bearing meaning.",
+      "intents": [
+        "debloat",
+        "apply-debloat"
+      ],
+      "requires": [],
+      "produces": [
+        "debloat-result"
+      ],
+      "gates": [
+        "authorization-before-mutation"
+      ],
+      "fallback": "fable-wise",
+      "mutatesWorkspace": true,
+      "parallelSafe": false,
+      "next": [],
+      "keywords": [
+        "debloat",
+        "fable-wise",
+        "depth"
+      ],
+      "audience": "consumer"
+    },
+    {
+      "id": "dedash",
+      "order": 511,
+      "phase": "planned",
+      "pack": "system",
+      "description": "Replace em-dashes within the exact user-authorized scope.",
+      "intents": [
+        "dedash",
+        "apply-dedash"
+      ],
+      "requires": [],
+      "produces": [
+        "dedash-result"
+      ],
+      "gates": [
+        "authorization-before-mutation"
+      ],
+      "fallback": "fable-wise",
+      "mutatesWorkspace": true,
+      "parallelSafe": false,
+      "next": [],
+      "keywords": [
+        "dedash",
+        "fable-wise",
+        "depth"
+      ],
+      "audience": "consumer"
+    },
+    {
+      "id": "detool",
+      "order": 512,
+      "phase": "planned",
+      "pack": "system",
+      "description": "Remove incidental tool coupling from durable artifacts without losing concrete mechanisms.",
+      "intents": [
+        "detool",
+        "apply-detool"
+      ],
+      "requires": [],
+      "produces": [
+        "detool-result"
+      ],
+      "gates": [
+        "authorization-before-mutation"
+      ],
+      "fallback": "fable-wise",
+      "mutatesWorkspace": true,
+      "parallelSafe": false,
+      "next": [],
+      "keywords": [
+        "detool",
+        "fable-wise",
+        "depth"
+      ],
+      "audience": "consumer"
+    },
+    {
+      "id": "factchk",
+      "order": 513,
+      "phase": "planned",
+      "pack": "system",
+      "description": "Verify reality-grounded claims against external evidence in both directions.",
+      "intents": [
+        "factchk",
+        "apply-factchk"
+      ],
+      "requires": [],
+      "produces": [
+        "factchk-result"
+      ],
+      "gates": [
+        "authorization-before-mutation"
+      ],
+      "fallback": "fable-wise",
+      "mutatesWorkspace": true,
+      "parallelSafe": false,
+      "next": [],
+      "keywords": [
+        "factchk",
+        "fable-wise",
+        "depth"
+      ],
+      "audience": "consumer"
+    },
+    {
+      "id": "feynman",
+      "order": 514,
+      "phase": "planned",
+      "pack": "system",
+      "description": "Pressure-test a recent decision until its rationale is independently explainable.",
+      "intents": [
+        "feynman",
+        "apply-feynman"
+      ],
+      "requires": [],
+      "produces": [
+        "feynman-result"
+      ],
+      "gates": [
+        "evidence-backed-output"
+      ],
+      "fallback": "fable-wise",
+      "mutatesWorkspace": false,
+      "parallelSafe": true,
+      "next": [],
+      "keywords": [
+        "feynman",
+        "fable-wise",
+        "depth"
+      ],
+      "audience": "consumer"
+    },
+    {
+      "id": "hate",
+      "order": 515,
+      "phase": "planned",
+      "pack": "system",
+      "description": "Find the single strongest objection to a plan and the cheapest falsification experiment.",
+      "intents": [
+        "hate",
+        "apply-hate"
+      ],
+      "requires": [],
+      "produces": [
+        "hate-result"
+      ],
+      "gates": [
+        "evidence-backed-output"
+      ],
+      "fallback": "fable-wise",
+      "mutatesWorkspace": false,
+      "parallelSafe": true,
+      "next": [],
+      "keywords": [
+        "hate",
+        "fable-wise",
+        "depth"
+      ],
+      "audience": "consumer"
+    },
+    {
+      "id": "macrothink",
+      "order": 516,
+      "phase": "planned",
+      "pack": "system",
+      "description": "Check a direction for tunnel vision using bounded independent fresh reads.",
+      "intents": [
+        "macrothink",
+        "apply-macrothink"
+      ],
+      "requires": [],
+      "produces": [
+        "macrothink-result"
+      ],
+      "gates": [
+        "evidence-backed-output"
+      ],
+      "fallback": "fable-wise",
+      "mutatesWorkspace": false,
+      "parallelSafe": true,
+      "next": [],
+      "keywords": [
+        "macrothink",
+        "fable-wise",
+        "depth"
+      ],
+      "audience": "consumer"
+    },
+    {
+      "id": "mandela",
+      "order": 517,
+      "phase": "planned",
+      "pack": "system",
+      "description": "Audit an evaluation or benchmark for leakage and lack of independent ground truth.",
+      "intents": [
+        "mandela",
+        "apply-mandela"
+      ],
+      "requires": [],
+      "produces": [
+        "mandela-result"
+      ],
+      "gates": [
+        "evidence-backed-output"
+      ],
+      "fallback": "fable-wise",
+      "mutatesWorkspace": false,
+      "parallelSafe": true,
+      "next": [],
+      "keywords": [
+        "mandela",
+        "fable-wise",
+        "depth"
+      ],
+      "audience": "consumer"
+    },
+    {
+      "id": "modelchk",
+      "order": 518,
+      "phase": "planned",
+      "pack": "system",
+      "description": "Recommend the cheapest sufficient capability tier and reasoning effort for a task.",
+      "intents": [
+        "modelchk",
+        "apply-modelchk"
+      ],
+      "requires": [],
+      "produces": [
+        "modelchk-result"
+      ],
+      "gates": [
+        "evidence-backed-output"
+      ],
+      "fallback": "fable-wise",
+      "mutatesWorkspace": false,
+      "parallelSafe": true,
+      "next": [],
+      "keywords": [
+        "modelchk",
+        "fable-wise",
+        "depth"
+      ],
+      "audience": "consumer"
+    },
+    {
+      "id": "re0-git",
+      "order": 519,
+      "phase": "planned",
+      "pack": "system",
+      "description": "Rewrite a finished commit message for a clear, handoff-ready Git history.",
+      "intents": [
+        "re0-git",
+        "apply-re0-git"
+      ],
+      "requires": [],
+      "produces": [
+        "re0-git-result"
+      ],
+      "gates": [
+        "authorization-before-mutation"
+      ],
+      "fallback": "fable-wise",
+      "mutatesWorkspace": true,
+      "parallelSafe": false,
+      "next": [],
+      "keywords": [
+        "re0-git",
+        "fable-wise",
+        "depth"
+      ],
+      "audience": "consumer"
+    },
+    {
+      "id": "re0-merge",
+      "order": 520,
+      "phase": "planned",
+      "pack": "system",
+      "description": "Review and land a contribution while preserving author credit and review evidence.",
+      "intents": [
+        "re0-merge",
+        "apply-re0-merge"
+      ],
+      "requires": [],
+      "produces": [
+        "re0-merge-result"
+      ],
+      "gates": [
+        "authorization-before-mutation"
+      ],
+      "fallback": "fable-wise",
+      "mutatesWorkspace": true,
+      "parallelSafe": false,
+      "next": [],
+      "keywords": [
+        "re0-merge",
+        "fable-wise",
+        "depth"
+      ],
+      "audience": "consumer"
+    },
+    {
+      "id": "re0-release",
+      "order": 521,
+      "phase": "planned",
+      "pack": "system",
+      "description": "Run a user-invoked shipping and release checklist before publishing.",
+      "intents": [
+        "re0-release",
+        "apply-re0-release"
+      ],
+      "requires": [],
+      "produces": [
+        "re0-release-result"
+      ],
+      "gates": [
+        "authorization-before-mutation"
+      ],
+      "fallback": "fable-wise",
+      "mutatesWorkspace": true,
+      "parallelSafe": false,
+      "next": [],
+      "keywords": [
+        "re0-release",
+        "fable-wise",
+        "depth"
+      ],
+      "audience": "consumer"
+    },
+    {
+      "id": "re0",
+      "order": 522,
+      "phase": "planned",
+      "pack": "system",
+      "description": "Refresh an artifact into a minimal, accurate current v0.",
+      "intents": [
+        "re0",
+        "apply-re0"
+      ],
+      "requires": [],
+      "produces": [
+        "re0-result"
+      ],
+      "gates": [
+        "authorization-before-mutation"
+      ],
+      "fallback": "fable-wise",
+      "mutatesWorkspace": true,
+      "parallelSafe": false,
+      "next": [],
+      "keywords": [
+        "re0",
+        "fable-wise",
+        "depth"
+      ],
+      "audience": "consumer"
+    },
+    {
+      "id": "readchk",
+      "order": 523,
+      "phase": "planned",
+      "pack": "system",
+      "description": "Resolve the intended meaning of a substantial instruction using existing context.",
+      "intents": [
+        "readchk",
+        "apply-readchk"
+      ],
+      "requires": [],
+      "produces": [
+        "readchk-result"
+      ],
+      "gates": [
+        "evidence-backed-output"
+      ],
+      "fallback": "fable-wise",
+      "mutatesWorkspace": false,
+      "parallelSafe": true,
+      "next": [],
+      "keywords": [
+        "readchk",
+        "fable-wise",
+        "depth"
+      ],
+      "audience": "consumer"
+    },
+    {
+      "id": "reorder",
+      "order": 524,
+      "phase": "planned",
+      "pack": "system",
+      "description": "Reorder an existing listing under one clear principle without changing its items.",
+      "intents": [
+        "reorder",
+        "apply-reorder"
+      ],
+      "requires": [],
+      "produces": [
+        "reorder-result"
+      ],
+      "gates": [
+        "authorization-before-mutation"
+      ],
+      "fallback": "fable-wise",
+      "mutatesWorkspace": true,
+      "parallelSafe": false,
+      "next": [],
+      "keywords": [
+        "reorder",
+        "fable-wise",
+        "depth"
+      ],
+      "audience": "consumer"
+    },
+    {
+      "id": "shower",
+      "order": 525,
+      "phase": "planned",
+      "pack": "system",
+      "description": "Cold-read an artifact from a fresh context to assess standalone clarity.",
+      "intents": [
+        "shower",
+        "apply-shower"
+      ],
+      "requires": [],
+      "produces": [
+        "shower-result"
+      ],
+      "gates": [
+        "evidence-backed-output"
+      ],
+      "fallback": "fable-wise",
+      "mutatesWorkspace": false,
+      "parallelSafe": true,
+      "next": [],
+      "keywords": [
+        "shower",
+        "fable-wise",
+        "depth"
+      ],
+      "audience": "consumer"
+    },
+    {
+      "id": "sip",
+      "order": 526,
+      "phase": "planned",
+      "pack": "system",
+      "description": "Taste-test a changed artifact using the repository's own specialist workflows.",
+      "intents": [
+        "sip",
+        "apply-sip"
+      ],
+      "requires": [],
+      "produces": [
+        "sip-result"
+      ],
+      "gates": [
+        "authorization-before-mutation"
+      ],
+      "fallback": "fable-wise",
+      "mutatesWorkspace": true,
+      "parallelSafe": false,
+      "next": [],
+      "keywords": [
+        "sip",
+        "fable-wise",
+        "depth"
+      ],
+      "audience": "consumer"
+    },
+    {
+      "id": "prism",
+      "order": 527,
+      "phase": "planned",
+      "pack": "system",
+      "description": "Assess one artifact through independent lenses and report agreement and disagreement.",
+      "intents": [
+        "prism",
+        "apply-prism"
+      ],
+      "requires": [],
+      "produces": [
+        "prism-result"
+      ],
+      "gates": [
+        "evidence-backed-output"
+      ],
+      "fallback": "fable-wise",
+      "mutatesWorkspace": false,
+      "parallelSafe": true,
+      "next": [],
+      "keywords": [
+        "prism",
+        "fable-wise",
+        "mesh"
       ],
       "audience": "consumer"
     }

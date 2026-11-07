@@ -166,9 +166,9 @@ Loop completes when:
 - final receipt shows exactly why looping ended and what should happen next.
 
 ## Progressive Resources
-- Deep guide: `references/polling-state-machines-and-backoff.md`
-- Existing guidelines: `references/loop-control-guidelines.md`
-- Example: `examples/poll-build-job.md`
+- Deep guide: [references/polling-state-machines-and-backoff.md](references/polling-state-machines-and-backoff.md)
+- Existing guidelines: [references/loop-control-guidelines.md](references/loop-control-guidelines.md)
+- Example: [examples/poll-build-job.md](examples/poll-build-job.md)
 
 
 ## DSH host and authorization boundary

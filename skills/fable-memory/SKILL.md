@@ -145,10 +145,10 @@ Memory work completes when:
 - a future agent can retrieve and apply the fact without overgeneralizing it.
 
 ## Progressive Resources
-- Deep guide: `references/durable-fact-lifecycle.md`
-- Existing protocol: `references/memory-management-protocol.md`
-- Template: `templates/memory-fact.template.md`
-- Example: `examples/recording-user-preference.md`
+- Deep guide: [references/durable-fact-lifecycle.md](references/durable-fact-lifecycle.md)
+- Existing protocol: [references/memory-management-protocol.md](references/memory-management-protocol.md)
+- Template: [templates/memory-fact.template.md](templates/memory-fact.template.md)
+- Example: [examples/recording-user-preference.md](examples/recording-user-preference.md)
 
 
 ## DSH host and authorization boundary

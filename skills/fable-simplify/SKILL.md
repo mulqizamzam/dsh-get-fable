@@ -157,9 +157,9 @@ Simplification completes when:
 - no unrelated behavior change is smuggled into cleanup.
 
 ## Progressive Resources
-- Deep guide: `references/behavior-preserving-refactor-strategy.md`
-- Existing patterns: `references/refactoring-patterns.md`
-- Example: `examples/flatten-nested-logic.md`
+- Deep guide: [references/behavior-preserving-refactor-strategy.md](references/behavior-preserving-refactor-strategy.md)
+- Existing patterns: [references/refactoring-patterns.md](references/refactoring-patterns.md)
+- Example: [examples/flatten-nested-logic.md](examples/flatten-nested-logic.md)
 
 
 ## DSH host and authorization boundary

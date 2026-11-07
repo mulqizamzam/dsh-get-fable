@@ -17,21 +17,25 @@ assert.deepEqual(inject, ['skills'])
 apply(ctx)
 
 const skills = await provider.list({ signal: controller.signal })
-assert.equal(skills.length, 47, 'expected 46 upstream skills plus the DSH fable-bug-hunt specialist')
+assert.equal(skills.length, 75, 'expected 47 original/port-specific skills plus 28 flattened Wise specialists')
 const names = new Set(skills.map(skill => skill.name))
 assert.equal(names.size, skills.length, 'skill names must be unique')
+const expectedWiseSkills = new Set(["re0-upgrade","ssotize","catchup","nba","re0-loop","re0-memo","re0-plan","re0-work","aim","autobahn","debloat","dedash","detool","factchk","feynman","hate","macrothink","mandela","modelchk","re0-git","re0-merge","re0-release","re0","readchk","reorder","shower","sip","prism"])
+for (const name of expectedWiseSkills) assert.ok(names.has(name), 'missing flattened Wise specialist ' + name)
+const userInvokedOnly = new Set(['re0-upgrade', 're0-plan', 'debloat', 'dedash', 'feynman', 'hate', 'macrothink', 're0-git', 're0-merge', 're0-release', 'reorder', 'prism'])
 
 for (const skill of skills) {
   assert.ok(skill.description.length > 0, skill.name + ': missing description')
   assert.equal(skill.provider, 'dsh-get-fable')
-  assert.equal(skill.invocation.modelInvocable, true)
-  assert.equal(skill.invocation.userInvocable, true)
+  assert.equal(skill.invocation.modelInvocable, !userInvokedOnly.has(skill.name), skill.name + ': model invocation policy mismatch')
+  assert.equal(skill.invocation.userInvocable, true, skill.name + ': expected user invocation to remain enabled')
   assert.equal(skill.resourceBase.kind, 'opaque')
 
   const definition = await provider.get(skill, { signal: controller.signal })
   assert.ok(definition, skill.name + ': provider did not load skill body')
   assert.equal(definition.name, skill.name)
   assert.equal(definition.description, skill.description)
+  assert.deepEqual(definition.invocation, skill.invocation, skill.name + ': loaded definition must preserve invocation policy')
   assert.ok(definition.content.length > 1000, skill.name + ': body unexpectedly short')
   assert.ok(definition.content.includes('## DSH host and authorization boundary'), skill.name + ': missing safety boundary')
   if (skill.name === 'get-fable') {
@@ -47,8 +51,9 @@ for (const skill of skills) {
 }
 
 assert.equal(await provider.get({ locator: '../package.json' }), undefined, 'path traversal locator must be rejected')
+assert.equal(await provider.get({ locator: 'stale-candidate' }), undefined, 'a removed skill must return undefined rather than throw')
 
 const aborted = new AbortController()
 aborted.abort(new Error('test abort'))
 await assert.rejects(provider.list({ signal: aborted.signal }), /test abort/)
-console.log('PASS: DSH skill provider smoke test (47 skills, list/get, diagnosis closure, policy, resource hint, abort, path traversal)')
+console.log('PASS: DSH skill provider smoke test (75 skills, list/get, invocation policy, diagnosis closure, stale candidate, resource hint, abort, path traversal)')

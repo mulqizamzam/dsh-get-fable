@@ -139,9 +139,9 @@ Simulation completes when:
 - evidence is labeled narrowly and handed to real verification where needed.
 
 ## Progressive Resources
-- Deep guide: `references/oracle-independence-and-simulation-boundaries.md`
-- Existing guide: `references/oracle-derivation-guide.md`
-- Example: `examples/independent-oracle-verification.md`
+- Deep guide: [references/oracle-independence-and-simulation-boundaries.md](references/oracle-independence-and-simulation-boundaries.md)
+- Existing guide: [references/oracle-derivation-guide.md](references/oracle-derivation-guide.md)
+- Example: [examples/independent-oracle-verification.md](examples/independent-oracle-verification.md)
 
 
 ## DSH host and authorization boundary

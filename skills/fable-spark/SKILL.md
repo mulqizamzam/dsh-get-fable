@@ -142,12 +142,12 @@ Spark succeeds when it either:
 - remains silent because intervention would add noise, scope, or speculation.
 
 ## Progressive Resources
-- Deep guide: `references/atomic-action-and-silence.md`
-- Next-move policy: `references/next-move-policy.md`
-- Silence: `references/silence-policy.md`
-- Evidence/gates: `references/evidence-and-gates.md`
-- Confidence: `references/confidence-policy.md`
-- Example: `examples/situational-awareness-walkthrough.md`
+- Deep guide: [references/atomic-action-and-silence.md](references/atomic-action-and-silence.md)
+- Next-move policy: [references/next-move-policy.md](references/next-move-policy.md)
+- Silence: [references/silence-policy.md](references/silence-policy.md)
+- Evidence/gates: [references/evidence-and-gates.md](references/evidence-and-gates.md)
+- Confidence: [references/confidence-policy.md](references/confidence-policy.md)
+- Example: [examples/situational-awareness-walkthrough.md](examples/situational-awareness-walkthrough.md)
 
 
 ## DSH host and authorization boundary

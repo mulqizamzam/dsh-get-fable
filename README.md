@@ -95,7 +95,7 @@ dari sudah dipublikasikan.
 
 ### Alur kerja yang disediakan
 
-Port ini membawa **47 skill** ke direktori `skills/`: 46 workflow dari katalog sumber ditambah satu spesialis khusus DSH, `fable-bug-hunt`. Spesialis ini menutup alur diagnosis dari gejala, reproduksi dan hipotesis sampai Diagnosis Packet atau handoff yang jelas saat window tidak cukup. Katalog juga mencakup lifecycle routing, discovery, riset, planning, TDD, bounded execution, verification, recovery, review/security, test engineering, release readiness, handoff, evaluasi, learning, arsitektur, delegasi, pengelolaan konteks, artefak, dan workflow produktivitas. Skill diiklankan melalui registry skill native DSH dan dimuat on-demand. Catatan port di `docs/PORTING.md` memisahkan workflow yang dipertahankan dari layanan upstream yang belum direplikasi.
+Port ini menyediakan **75 skill tingkat atas** di `skills/`: 41 ID dari registry upstream, enam skill tambahan pada port sebelumnya (termasuk `fable-bug-hunt`), dan 28 subskill bertingkat dari `fable-wise` yang kini diratakan agar provider dapat menemukannya. Subskill dikelompokkan sebagai Breadth (`re0-upgrade`, `ssotize`), Coil (`catchup`, `nba`, `re0-loop`, `re0-memo`, `re0-plan`, `re0-work`), Depth (`aim`, `autobahn`, `debloat`, `dedash`, `detool`, `factchk`, `feynman`, `hate`, `macrothink`, `mandela`, `modelchk`, `re0-git`, `re0-merge`, `re0-release`, `re0`, `readchk`, `reorder`, `shower`, `sip`), dan Mesh (`prism`). Dua belas skill mempertahankan `disable-model-invocation: true`, sehingga hanya dapat dipanggil pengguna secara eksplisit. Skill diiklankan melalui registry native dan dimuat on-demand. `fable-redteam` sekarang secara tegas merupakan panduan review keamanan berbasis source saja: scanner jaringan, active probe, adapter Cloudflare, SARIF generator, dan runtime audit upstream tidak disertakan. Catatan port di `docs/PORTING.md` memisahkan workflow yang dibawa dari runtime upstream yang tidak direplikasi.
 
 ## Konfigurasi dan data
 
@@ -116,8 +116,15 @@ Port ini membawa **47 skill** ke direktori `skills/`: 46 workflow dari katalog s
 
 ## Lisensi dan asal
 
-Port ini diturunkan dari [imMamdouhaboammar/get-fable](https://github.com/imMamdouhaboammar/get-fable). Periksa berkas `LICENSE` dan pertahankan pemberitahuan lisensi/hak cipta saat mendistribusikan perubahan. Proyek ini merupakan port komunitas dan tidak menyatakan afiliasi resmi dengan DeepSeek.
+Port ini diturunkan dari [imMamdouhaboammar/get-fable](https://github.com/imMamdouhaboammar/get-fable) pada commit upstream yang tercatat di `docs/RESOURCE-MANIFEST.json`. Materi utama get-fable dan 125 resource pendukung lokal menggunakan AGPL-3.0-or-later; salinan teks lisensi upstream tersedia di `LICENSES/GET-FABLE-AGPL-3.0-or-later.txt`. Materi Fable Wise dan Fable Council memiliki pemberitahuan MIT tersendiri yang dipertahankan di folder `LICENSES/`. Periksa seluruh pemberitahuan lisensi sebelum mendistribusikan perubahan. Proyek ini merupakan port komunitas dan tidak menyatakan afiliasi resmi dengan DeepSeek.
 
 ## Pengembangan
 
 Lihat `docs/PORTING.md` untuk keputusan port, target versi harness, komponen yang dipertahankan, batasan, serta status validasi. Untuk perubahan plugin, lakukan validasi format manifest, struktur bundle, katalog skill, dan smoke test pada DSH `0.2.1-rc.2` sebelum menyatakan port siap produksi.
+
+
+## Resource pendukung dan penggunaan offline
+
+Port ini menyertakan **125 berkas resource pendukung secara lokal**: 117 file yang dirujuk secara eksplisit oleh skill dan delapan adapter domain tambahan dari direktori domain. Tautan di 29 dokumen skill telah diubah menjadi path relatif, sehingga berkas tersebut dapat dibaca tanpa mengambil file dari upstream setelah repositori di-clone. Dua belas referensi khusus port yang memang tidak tersedia pada revisi upstream tetap dinyatakan tidak tersedia; tidak ada dokumen pengganti yang dikarang.
+
+Rincian sumber, lisensi, daftar file, dan pemeriksaan otomatis tersedia pada [Resource Integrity](docs/RESOURCE-INTEGRITY.md) dan [manifest resource](docs/RESOURCE-MANIFEST.json). Jalankan `node scripts/check-skill-resources.mjs` untuk memvalidasi kelengkapan bundle.
